@@ -5,7 +5,7 @@ function App() {
       <header className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
           <h1 className="text-4xl font-bold text-gray-900">Kyra Hermann</h1>
-          <p className="text-xl text-gray-600 mt-2">What I'm doing now</p>
+          <p className="text-xl text-gray-600 mt-2">Freelancer for Marketing & Project Management</p>
         </div>
       </header>
 
@@ -16,7 +16,8 @@ function App() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Current Focus</h2>
           <p className="text-gray-700 leading-relaxed">
-            Write what you're currently working on or focused on right now.
+            I focus on work that moves ideas from concept to reality. Coordinating across teams, shaping communication, and making sure customer-facing initiatives actually land. 
+            <div>Need a pair of hands to bring an idea to life? Let's talk.</div> 
           </p>
         </section>
 
@@ -25,12 +26,12 @@ function App() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Current Projects</h2>
           <div className="space-y-4">
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900">Project 1</h3>
-              <p className="text-gray-600 mt-2">Description of your project</p>
+              <h3 className="text-lg font-semibold text-gray-900">BoraBora Studios</h3>
+              <p className="text-gray-600 mt-2">Producer - Campaign & Activation<div>I work with BoraBora Studios as a producer, supporting the delivery of customer-facing activation campaigns. My role sits at the intersection of concept, coordination, and execution of digital experience products - translating creative ideas into clear plans, aligning stakeholders, and making sure projects move smoothly from brief to launch.</div></p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-lg font-semibold text-gray-900">Project 2</h3>
-              <p className="text-gray-600 mt-2">Description of your project</p>
+              <h3 className="text-lg font-semibold text-gray-900">Montblanc Digital Paper</h3>
+              <p className="text-gray-600 mt-2">Marketing & Project Management<div>I support Montblanc's Digital Paper ecosystem through hands-on, project-based work across marketing, product, and execution. My role focuses on shaping how the product is understood, communicated, and supported across customer touchpoints, from launch to post-purchase experience.</div></p>
             </div>
           </div>
         </section>
@@ -39,9 +40,9 @@ function App() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Currently Learning</h2>
           <ul className="list-disc list-inside text-gray-700 space-y-2">
-            <li>Thing you're learning 1</li>
-            <li>Thing you're learning 2</li>
-            <li>Thing you're learning 3</li>
+            <li><b>Coding & web development</b> - buidling this site from scratch, learning how structure, layout, and logic come together on the web</li>
+            <li><b>Piano arpeggios</b> - working on moving more fluidly across octabes and building more comfort beyond fixed patterns.</li>
+            <li><b>Communicating complexity</b> - finding better ways to explain products, ideas, and systems clearly and thoughtfully.</li>
           </ul>
         </section>
 
@@ -49,10 +50,8 @@ function App() {
         <section>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h2>
           <div className="flex gap-4">
-            <a href="#" className="text-blue-600 hover:text-blue-800">Twitter</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800">LinkedIn</a>
-            <a href="#" className="text-blue-600 hover:text-blue-800">GitHub</a>
-            <a href="mailto:your@email.com" className="text-blue-600 hover:text-blue-800">Email</a>
+            <a href="https://www.linkedin.com/in/kyra-hermann-931850149?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" className="text-blue-600 hover:text-blue-800">LinkedIn</a>
+            <a href="mailto:hermann.kyra@gmail.com" className="text-blue-600 hover:text-blue-800">Email</a>
           </div>
         </section>
 

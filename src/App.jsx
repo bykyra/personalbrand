@@ -2,27 +2,38 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       
-     {/* Hero Section */}
-     <section className="max-w-4xl mx-auto px-6 py-20">
-        <div className="space-y-6">
-          <h1 className="text-5xl font-light text-gray-900 leading-tight">
-            Kyra Hermann
-          </h1>
-          <p className="text-2xl text-gray-600 font-light max-w-2xl">
-            I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
-            initiatives to product communication and rollout.
-          </p>
-        </div>
-      </section>
+{/* Hero Section */}
+<section className="max-w-4xl mx-auto px-11 py-20">
+  <div className="grid md:grid-cols-2 gap-12 md:gap-0 items-center">
+    
+    {/* Logo */}
+    <div>
+      <img 
+        src="/logo.png" 
+        alt="Kyra Hermann" 
+        className="w-full max-w-xs"
+      />
+    </div>
+
+   {/* Tagline */}
+<div className="pr-8 md:pr-12">
+<p className="text-sm uppercase tracking-widest text-gray-500 font-medium leading-loose">
+  I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
+  initiatives to product communication and rollout.
+</p>
+    </div>
+
+  </div>
+</section>
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-gray-200"></div>
+        <div className="border-t border-sage-200"></div>
       </div>
 
       {/* About Section */}
       <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-6">How I Work</h2>
+      <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">How I Work</h2>
         <div className="prose prose-lg max-w-2xl">
           <p className="text-gray-700 leading-relaxed">
             I focus on work that moves ideas from concept to reality. Coordinating across teams, 
@@ -33,16 +44,16 @@ function App() {
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-gray-200"></div>
+        <div className="border-t border-sage-200"></div>
       </div>
 
       {/* Services Section */}
       <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-8">What I Offer</h2>
+      <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">What I Offer</h2>
         <div className="grid md:grid-cols-2 gap-8">
           
           <div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            <h3 className="text-lm font-medium text-gray-900 mb-2">
               Campaign & Activation Coordination
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -52,7 +63,7 @@ function App() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            <h3 className="text-lm font-medium text-gray-900 mb-2">
               Go-to-Market Support
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -62,7 +73,7 @@ function App() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            <h3 className="text-lm font-medium text-gray-900 mb-2">
               Cross-Functional Project Management
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -72,7 +83,7 @@ function App() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            <h3 className="text-lm font-medium text-gray-900 mb-2">
               Product Communication
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -86,12 +97,12 @@ function App() {
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-gray-200"></div>
+        <div className="border-t border-sage-200"></div>
       </div>
 
       {/* Selected Work Section */}
       <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-8">Selected Work</h2>
+      <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">Selected Work</h2>
         <div className="space-y-12">
           
           {/* Project 1 - BoraBora Studios */}
@@ -128,38 +139,79 @@ function App() {
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-gray-200"></div>
+        <div className="border-t border-sage-200"></div>
       </div>
 
-      {/* Current Focus */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-6">Right Now</h2>
-        <p className="text-gray-700 leading-relaxed max-w-2xl mb-6">
-          Currently available for project-based work and open to conversations about 
-          campaign support, product launches, and cross-functional initiatives.
-        </p>
-      </section>
+  
+{/* Currently Learning Section */}
+<section className="max-w-4xl mx-auto px-6 py-20">
+<h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">Currently Learning</h2>
+  <div className="space-y-6 max-w-2xl">
+    
+    <div>
+      <h3 className="text-lm font-medium text-gray-900 mb-2">
+        Coding & web development
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Building this site from scratch, learning how structure, layout, and logic come together on the web.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lm font-medium text-gray-900 mb-2">
+        Piano arpeggios
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Working on moving more fluidly across octaves and building more comfort beyond fixed patterns.
+      </p>
+    </div>
+
+    <div>
+      <h3 className="text-lm font-medium text-gray-900 mb-2">
+        Communicating complexity
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Finding better ways to explain products, ideas, and systems clearly and thoughtfully.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-gray-200"></div>
+        <div className="border-t border-sage-200"></div>
       </div>
 
-      {/* Contact Section */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-sm uppercase tracking-wider text-gray-500 mb-6">Get in Touch</h2>
-        <div className="space-y-4">
-          <p className="text-gray-700 leading-relaxed max-w-2xl">
-          Need a pair of hands to bring an idea to life? Let's talk.
-          </p>
-          <a 
-            href="mailto:hermann.kyra@gmail.com" 
-            className="inline-block text-gray-900 hover:text-gray-600 transition-colors border-b border-gray-900 hover:border-gray-600 pb-1"
-          >
-            hermann.kyra@gmail.com
-          </a>
-        </div>
-      </section>
+{/* Contact Section */}
+<section className="max-w-4xl mx-auto px-6 py-20">
+  <div className="flex flex-col md:flex-row md:items-start gap-12">
+    
+    {/* Photo */}
+    <div className="md:flex-shrink-0">
+      <img 
+        src="/P1330664.JPG" 
+        alt="Kyra Hermann" 
+        className="w-32 h-32 object-cover rounded-full"
+      />
+    </div>
+
+    {/* Contact info */}
+    <div className="space-y-6 flex-1">
+    <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">Get in Touch</h2>
+      <p className="text-gray-700 leading-relaxed max-w-2xl">
+      Need a pair of hands to bring an idea to life? Let's talk.
+      </p>
+      <a 
+        href="mailto:hermann.kyra@gmail.com" 
+        className="inline-block text-gray-900 hover:text-sage-600 transition-colors border-b border-gray-900 hover:border-sage-600 pb-1"
+      >
+        your@email.com
+      </a>
+    </div>
+
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="max-w-4xl mx-auto px-6 py-12 border-t border-gray-200">

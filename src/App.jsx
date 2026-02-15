@@ -9,9 +9,9 @@ function App() {
     {/* Logo */}
     <div>
       <img 
-        src="/logo.png" 
+        src="/kyra.jpg" 
         alt="Kyra Hermann" 
-        className="w-full max-w-xs"
+        className="w-40 h-40 object-cover rounded-full"
       />
     </div>
 
@@ -190,7 +190,7 @@ function App() {
     {/* Photo */}
     <div className="md:flex-shrink-0">
       <img 
-        src="/P1330664.JPG" 
+        src="/logo.png" 
         alt="Kyra Hermann" 
         className="w-32 h-32 object-cover rounded-full"
       />
@@ -206,7 +206,7 @@ function App() {
         href="mailto:hermann.kyra@gmail.com" 
         className="inline-block text-gray-900 hover:text-sage-600 transition-colors border-b border-gray-900 hover:border-sage-600 pb-1"
       >
-        your@email.com
+        hermann.kyra@gmail.com
       </a>
     </div>
 

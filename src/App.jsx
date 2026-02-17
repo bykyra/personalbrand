@@ -51,11 +51,11 @@ function App() {
 
 {/* Services Section */}
 <section className="max-w-4xl mx-auto px-6 py-24">
-  <h2 className="text-sm uppercase tracking-widest text-terracotta-500 mb-8 font-medium">What I Offer</h2>
-  <div className="grid md:grid-cols-2 gap-6">
+  <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">What I Offer</h2>
+  <div className="grid md:grid-cols-2 gap-6 group">
     
-    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
-      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+    <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3">
         Campaign & Activation Coordination
       </h3>
       <p className="text-gray-600 leading-relaxed">
@@ -64,8 +64,8 @@ function App() {
       </p>
     </div>
 
-    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
-      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+    <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3">
         Go-to-Market Support
       </h3>
       <p className="text-gray-600 leading-relaxed">
@@ -74,8 +74,8 @@ function App() {
       </p>
     </div>
 
-    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
-      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+    <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3">
         Cross-Functional Project Management
       </h3>
       <p className="text-gray-600 leading-relaxed">
@@ -84,8 +84,8 @@ function App() {
       </p>
     </div>
 
-    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
-      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+    <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3">
         Product Communication
       </h3>
       <p className="text-gray-600 leading-relaxed">

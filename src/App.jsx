@@ -1,3 +1,5 @@
+import Timeline from "./Timeline";
+
 function App() {
   return (
     <div className="min-h-screen bg-white">
@@ -47,100 +49,111 @@ function App() {
         <div className="border-t border-sage-200"></div>
       </div>
 
-      {/* Services Section */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-      <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">What I Offer</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">
-              Campaign & Activation Coordination
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              End-to-end support for customer-facing campaigns, from planning through execution 
-              and performance tracking.
-            </p>
-          </div>
+{/* Services Section */}
+<section className="max-w-4xl mx-auto px-6 py-24">
+  <h2 className="text-sm uppercase tracking-widest text-terracotta-500 mb-8 font-medium">What I Offer</h2>
+  <div className="grid md:grid-cols-2 gap-6">
+    
+    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+        Campaign & Activation Coordination
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        End-to-end support for customer-facing campaigns, from planning through execution 
+        and performance tracking.
+      </p>
+    </div>
 
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">
-              Go-to-Market Support
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Strategic coordination for product and feature launches, ensuring alignment 
-              across teams and channels.
-            </p>
-          </div>
+    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+        Go-to-Market Support
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Strategic coordination for product and feature launches, ensuring alignment 
+        across teams and channels.
+      </p>
+    </div>
 
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">
-              Cross-Functional Project Management
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Bringing structure to complex initiatives, managing timelines, stakeholders, 
-              and deliverables across functions.
-            </p>
-          </div>
+    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+        Cross-Functional Project Management
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Bringing structure to complex initiatives, managing timelines, stakeholders, 
+        and deliverables across functions.
+      </p>
+    </div>
 
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">
-              Product Communication
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Shaping how products and initiatives are positioned and communicated across 
-              digital and retail touchpoints.
-            </p>
-          </div>
+    <div className="group p-6 border border-gray-100 rounded-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-300 cursor-default">
+      <h3 className="text-lm font-medium text-gray-900 mb-3 group-hover:text-sage-700 transition-colors duration-300">
+        Product Communication
+      </h3>
+      <p className="text-gray-600 leading-relaxed">
+        Shaping how products and initiatives are positioned and communicated across 
+        digital and retail touchpoints.
+      </p>
+    </div>
 
-        </div>
-      </section>
+  </div>
+</section>
+
+      {/* Divider */}
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="border-t border-sage-200"></div>
+      </div>
+
+{/* Selected Work Section */}
+<section className="max-w-4xl mx-auto px-6 py-24">
+  <h2 className="text-sm uppercase tracking-widest text-terracotta-500 mb-8 font-medium">Selected Work</h2>
+  <div className="space-y-12">
+
+    {/* Montblanc */}
+    <div>
+      <h3 className="text-xm font-medium text-gray-900 mb-2">
+        Montblanc Digital Paper
+      </h3>
+      <p className="text-sm text-gray-500 mb-4">Marketing & Project Management | Ongoing</p>
+      <p className="text-gray-700 leading-relaxed mb-4">
+        <span className="font-medium">My role:</span> Hands-on, project-based support across 
+        marketing, product, and execution — shaping how the product is understood, communicated, 
+        and supported across customer touchpoints, from launch to post-purchase experience.
+      </p>
+    </div>
+
+    {/* BoraBora */}
+    <div>
+      <h3 className="text-xm font-medium text-gray-900 mb-2">
+        BoraBora Studios
+      </h3>
+      <p className="text-sm text-gray-500 mb-4">Producer - Campaign & Activation | Ongoing</p>
+      <p className="text-gray-700 leading-relaxed">
+        <span className="font-medium">My role:</span> Supporting the delivery of customer-facing 
+        activation campaigns. Translating creative ideas into clear plans, aligning stakeholders, 
+        and ensuring smooth delivery from brief to launch across three separate projects.
+      </p>
+    </div>
+
+    {/* Other Clients */}
+    <div>
+      <h3 className="text-xm font-medium text-gray-900 mb-2">
+        Other Clients
+      </h3>
+      <p className="text-sm text-gray-500 mb-4">Social Media Management | 2024 - Present</p>
+      <p className="text-gray-700 leading-relaxed mb-4">
+        <span className="font-medium">My role:</span> Supporting smaller brands with social 
+        media strategy, content planning, and community management.
+      </p>
+    </div>
+
+  </div>
+</section>
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
         <div className="border-t border-sage-200"></div>
       </div>
 
-      {/* Selected Work Section */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-      <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">Selected Work</h2>
-        <div className="space-y-12">
-          
-          {/* Project 1 - BoraBora Studios */}
-          <div>
-            <h3 className="text-xl font-medium text-gray-900 mb-3">
-              BoraBora Studios
-            </h3>
-            <p className="text-sm text-gray-500 mb-4">Producer - Campaign & Activation | Ongoing</p>
-            <p className="text-gray-700 leading-relaxed">
-              <span className="font-medium">My role:</span> I work with BoraBora Studios as a producer, 
-              supporting the delivery of customer-facing activation campaigns. My role sits at the 
-              intersection of concept, coordination, and execution of digital experience products — 
-              translating creative ideas into clear plans, aligning stakeholders, and making sure 
-              projects move smoothly from brief to launch.
-            </p>
-          </div>
-
-          {/* Project 2 - Montblanc */}
-          <div>
-            <h3 className="text-xl font-medium text-gray-900 mb-3">
-              Montblanc Digital Paper
-            </h3>
-            <p className="text-sm text-gray-500 mb-4">Marketing & Project Management | Ongoing</p>
-            <p className="text-gray-700 leading-relaxed">
-              <span className="font-medium">My role:</span> I support Montblanc's Digital Paper 
-              ecosystem through hands-on, project-based work across marketing, product, and execution. 
-              My focus is on shaping how the product is understood, communicated, and supported across 
-              customer touchpoints, from launch to post-purchase experience.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
-      </div>
+      <Timeline />
 
   
 {/* Currently Learning Section */}
@@ -178,10 +191,10 @@ function App() {
   </div>
 </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
-      </div>
+  {/* Divider */}
+<div className="max-w-4xl mx-auto px-6">
+  <div className="border-t border-gray-200"></div>
+</div>
 
 {/* Contact Section */}
 <section className="max-w-4xl mx-auto px-6 py-20">

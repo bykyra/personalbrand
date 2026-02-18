@@ -7,6 +7,7 @@ function Nav() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/work', label: 'Work' },
+    { path: '/notes', label: 'Notes' },
   ]
 
   return (
@@ -14,7 +15,7 @@ function Nav() {
       
       {/* Logo */}
       <Link to="/">
-        <img src="/logo.png" alt="Kyra Hermann" className="h-8 w-auto" />
+        <img src="/logo.png" alt="Kyra Hermann" className="h-20 w-auto" />
       </Link>
 
       {/* Links */}

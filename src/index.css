@@ -1,5 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Markdown styling */
+article h1 {
+  @apply text-3xl font-medium text-gray-900 mb-6 mt-12;
+}
+
+article h2 {
+  @apply text-2xl font-medium text-gray-900 mb-4 mt-10;
+}
+
+article p {
+  @apply text-lg leading-loose mb-6;
+}
+
+article strong {
+  @apply font-medium text-gray-900;
+}
+
+article ul {
+  @apply list-disc list-inside mb-6 space-y-2;
+}
+
+article a {
+  @apply text-sage-600 hover:text-sage-700 underline;
+}

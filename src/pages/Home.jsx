@@ -1,27 +1,44 @@
-import Timeline from "../Timeline";
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 function Home() {
   return (
     <div className="min-h-screen bg-white">
-      
-      {/* Hero Section */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div>
-            <img 
-              src="/kyra.jpg" 
-              alt="Kyra Hermann" 
-              className="w-35 h-35 object-cover rounded-full"
-            />
-          </div>
-          <div className="pr-8 md:pr-12">
-            <p className="text-sm uppercase tracking-widest text-gray-500 font-medium leading-loose">
-              I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
-              initiatives to product communication and rollout.
-            </p>
-          </div>
-        </div>
-      </section>
+
+{/* Hero Image with Parallax */}
+<section className="w-full pt-12 overflow-hidden">
+  <motion.div
+    style={{
+      y: useTransform(useScroll().scrollY, [0, 500], [0, 20])
+    }}
+  >
+     <img 
+    src="/headerabout.png" 
+    alt="Kyra Hermann" 
+    className="w-full h-[60vh] object-cover"
+  />
+  </motion.div>
+  
+  {/* Text below image - centered */}
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    viewport={{ once: true }}
+    className="max-w-4xl mx-auto px-6 py-16 text-center"
+  >
+    <h1 className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-3 tracking-tight">
+      Kyra Hermann
+    </h1>
+    <p className="text-lg text-gray-500 font-light mb-12">
+      Busy being productive
+    </p>
+    
+    <p className="text-sm uppercase tracking-widest text-gray-500 font-medium leading-loose max-w-2xl mx-auto">
+      I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
+      initiatives to product communication and rollout.
+    </p>
+  </motion.div>
+</section>
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
@@ -136,9 +153,6 @@ function Home() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="border-t border-sage-200"></div>
       </div>
-
-      {/* Timeline */}
-      <Timeline />
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">

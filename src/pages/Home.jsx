@@ -2,42 +2,35 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 function Home() {
   return (
+    <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.4 }}
+    className="min-h-screen bg-white"
+  >
     <div className="min-h-screen bg-white">
 
-{/* Hero Image with Parallax */}
-<section className="w-full pt-12 overflow-hidden">
-  <motion.div
-    style={{
-      y: useTransform(useScroll().scrollY, [0, 500], [0, 20])
-    }}
-  >
-     <img 
-    src="/headerabout.png" 
-    alt="Kyra Hermann" 
-    className="w-full h-[60vh] object-cover"
-  />
-  </motion.div>
-  
-  {/* Text below image - centered */}
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="max-w-4xl mx-auto px-6 py-16 text-center"
-  >
-    <h1 className="text-4xl md:text-5xl font-serif font-normal text-gray-900 mb-3 tracking-tight">
-      Kyra Hermann
-    </h1>
-    <p className="text-lg text-gray-500 font-light mb-12">
-      Busy being productive
-    </p>
+{/* New Text-Based Hero - Refined */}
+<section className="max-w-4xl mx-auto px-6 pt-16 pb-20">
+  <div className="text-center">
+    {/* Logo with everything integrated */}
+    <div className="mb-12">
+      <img 
+        src="/homelogo.jpeg" 
+        alt="Kyra - Freelancer Marketing & Project Management" 
+        className="h-24 md:h-28 mx-auto"
+      />
+    </div>
     
-    <p className="text-sm uppercase tracking-widest text-gray-500 font-medium leading-loose max-w-2xl mx-auto">
-      I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
-      initiatives to product communication and rollout.
-    </p>
-  </motion.div>
+    {/* Tagline */}
+    <div className="max-w-2xl mx-auto">
+      <p className="text-sm md:text-xm uppercase text-gray-700 leading-relaxed">
+        I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
+        initiatives to product communication and rollout.
+      </p>
+    </div>
+  </div>
 </section>
 
       {/* Divider */}
@@ -45,14 +38,31 @@ function Home() {
         <div className="border-t border-sage-200"></div>
       </div>
 
-      {/* How I Work */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">How I Work</h2>
-        <p className="text-gray-700 text-lg leading-loose max-w-2xl">
-          I focus on work that moves ideas from concept to reality. Coordinating across teams, 
-          shaping communication, and making sure customer-facing initiatives actually land.
-        </p>
-      </section>
+{/* How I Work - Centered */}
+<section
+  className="max-w-4xl mx-auto px-6 py-16"
+>
+  <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-6 font-medium">How I Work</h2>
+  
+  <div className="flex flex-col md:flex-row gap-8 items-center">
+    {/* Photo */}
+    <div className="md:flex-shrink-0">
+      <img 
+        src="/kyra.jpg" 
+        alt="Kyra Hermann" 
+        className="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full"
+      />
+    </div>
+    
+    {/* Text */}
+    <div className="flex-1">
+      <p className="text-gray-700 text-lm leading-loose">
+        I focus on work that moves ideas from concept to reality. Coordinating across teams, 
+        shaping communication, and making sure customer-facing initiatives actually land.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Divider */}
       <div className="max-w-4xl mx-auto px-6">
@@ -226,7 +236,8 @@ function Home() {
       </footer>
 
     </div>
-  )
+  
+  </motion.div>)
 }
 
 export default Home

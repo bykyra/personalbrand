@@ -1,7 +1,15 @@
+import { motion } from 'framer-motion'
 import Timeline from "../Timeline";
 
 function About() {
   return (
+    <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.4 }}
+    className="min-h-screen bg-white"
+  >
     <div className="min-h-screen bg-white">
 
 {/* Hero Image */}
@@ -159,7 +167,7 @@ function About() {
       </footer>
 
     </div>
-  )
+    </motion.div>)
 }
 
 export default About

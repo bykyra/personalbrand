@@ -1,6 +1,70 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
 
+function ContactForm() {
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+    const data = new FormData(e.target)
+    const res = await fetch('https://formspree.io/f/xjgazoab', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' }
+    })
+    if (res.ok) {
+      setStatus('success')
+      e.target.reset()
+    } else {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+      {status === 'success' ? (
+        <p className="text-sm text-gray-700">Thanks — I'll be in touch soon.</p>
+      ) : (
+        <div className="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            required
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400"
+          />
+          <textarea
+            name="message"
+            placeholder="Your message"
+            required
+            rows={4}
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400 resize-none"
+          />
+          {status === 'error' && (
+            <p className="text-xs text-red-500">Something went wrong — please try again.</p>
+          )}
+          <button
+            type="submit"
+            disabled={status === 'sending'}
+            onClick={handleSubmit}
+            className="text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1 disabled:opacity-50"
+          >
+            {status === 'sending' ? 'Sending...' : 'Send message →'}
+          </button>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function WorkbookPreview() {
   const pages = [
     '/Handwriting_Page_01.png',
@@ -392,27 +456,22 @@ function Work() {
       </div>
 
       {/* Contact CTA */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-3">
-            <p className="text-xs uppercase tracking-widest text-gray-400 sticky top-32">
-              Get in Touch
-            </p>
-          </div>
-          
-          <div className="md:col-span-9 space-y-4">
-            <p className="text-sm text-gray-700 leading-relaxed">
-              Are you in need of an extra pair of hands to bring an idea to life? Let's talk!
-            </p>
-            <a 
-              href="mailto:hermann.kyra@gmail.com" 
-              className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-600 hover:border-gray-600 transition-colors pb-1"
-            >
-              hermann.kyra@gmail.com
-            </a>
-          </div>
-        </div>
-      </section>
+     {/* Contact CTA */}
+<section className="max-w-5xl mx-auto px-6 py-20">
+  <div className="grid md:grid-cols-12 gap-12">
+    <div className="md:col-span-3">
+      <p className="text-xs uppercase tracking-widest text-gray-400 sticky top-32">
+        Get in Touch
+      </p>
+    </div>
+    <div className="md:col-span-9 space-y-6">
+      <p className="text-sm text-gray-700 leading-relaxed">
+        Are you in need of an extra pair of hands to bring an idea to life? Let's talk!
+      </p>
+      <ContactForm />
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-gray-200">

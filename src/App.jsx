@@ -6,6 +6,8 @@ import About from './pages/About'
 import Work from './pages/Work'
 import Notes from './pages/Notes'
 import Post from './pages/Post'
+import Impressum from './pages/Impressum'
+import Datenschutz from './pages/Datenschutz'
 
 function App() {
   const location = useLocation()
@@ -20,6 +22,8 @@ function App() {
           <Route path="/work" element={<Work />} />
           <Route path="/notes" element={<Notes />} />
           <Route path="/notes/:slug" element={<Post />} />
+          <Route path="/impressum" element={<Impressum />} />
+          <Route path="/datenschutz" element={<Datenschutz />} />
         </Routes>
       </AnimatePresence>
     </>

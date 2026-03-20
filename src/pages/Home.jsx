@@ -1,6 +1,69 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
+function ContactForm() {
+  const [status, setStatus] = useState('idle')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+    const data = new FormData(e.target)
+    const res = await fetch('https://formspree.io/f/xjgazoab', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' }
+    })
+    if (res.ok) {
+      setStatus('success')
+      e.target.reset()
+    } else {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+      {status === 'success' ? (
+        <p className="text-sm text-gray-700">Thanks — I'll be in touch soon.</p>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            required
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400"
+          />
+          <textarea
+            name="message"
+            placeholder="Your message"
+            required
+            rows={4}
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400 resize-none"
+          />
+          {status === 'error' && (
+            <p className="text-xs text-red-500">Something went wrong — please try again.</p>
+          )}
+          <button
+            type="submit"
+            disabled={status === 'sending'}
+            className="text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1 disabled:opacity-50"
+          >
+            {status === 'sending' ? 'Sending...' : 'Send message →'}
+          </button>
+        </form>
+      )}
+    </div>
+  )
+}
+
 function Home() {
   const [activeSection, setActiveSection] = useState('what-i-do')
   const [isScrolled, setIsScrolled] = useState(false)
@@ -249,7 +312,7 @@ function Home() {
         <div className="border-t border-gray-200"></div>
       </div>
 
-     {/* Approach */}
+    {/* Approach */}
 <section id="approach" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
   <div className="grid md:grid-cols-12 gap-12">
     <div className="md:col-span-3">
@@ -264,7 +327,7 @@ function Home() {
         shaping communication, and making sure customer-facing initiatives actually land.
       </p>
       
-      <p className="text-sm text-gray-700 leading-loos text-justify">
+      <p className="text-sm text-gray-700 leading-loose text-justify">
         My approach combines structure with flexibility. I bring clarity to complex projects, 
         translate between different stakeholders, and stay close to execution. Whether it's 
         coordinating a product launch, building out communication materials, or supporting 
@@ -278,25 +341,23 @@ function Home() {
         and help bring customer-facing ideas to life, let's talk.
       </p>
 
-     {/* CTA */}
-<div className="pt-4 border-t border-gray-200 mt-8 flex items-center gap-8">
-  <img 
-    src="/kyra.jpg" 
-    alt="Kyra Hermann"
-    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
-  />
-  <div>
-    <p className="text-sm text-gray-600 mb-4">
-      Need an extra pair of hands to bring an idea to life?
-    </p>
-    <a 
-      href="mailto:hermann.kyra@gmail.com" 
-      className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1"
-    >
-      Get in touch →
-    </a>
-  </div>
-</div>
+      {/* CTA */}
+      <div className="pt-4 border-t border-gray-200 mt-8">
+        <div className="flex gap-8 items-start">
+          <img
+            src="/kyra.jpg"
+            alt="Kyra Hermann"
+            className="w-32 h-32 rounded-full object-cover flex-shrink-0 mt-1"
+          />
+          <div className="flex-1 space-y-4">
+            <p className="text-sm text-gray-600">
+              Need an extra pair of hands to bring an idea to life?
+            </p>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

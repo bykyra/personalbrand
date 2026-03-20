@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Work from './pages/Work'
 import Notes from './pages/Notes'
-import Post from './pages/post'
+import Post from './pages/Post'
 
 function App() {
   const location = useLocation()

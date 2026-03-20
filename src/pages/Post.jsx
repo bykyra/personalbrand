@@ -10,7 +10,7 @@ const PHOTOS_TOP = [
   { src: '/sophie-3.JPG',  alt: 'Engraving process close-up' },
   { src: '/sophie-4.JPG',  alt: 'Coffee and workspace details' },
   { src: '/sophie-9.JPG',  alt: 'Coffee and workspace details' },
-  { src: '/sophie-10.JPG',  alt: 'Coffee and workspace details' },
+  { src: '/sophie-12.JPG',  alt: 'Coffee and workspace details' },
 ]
 
 const PHOTOS_BOTTOM = [
@@ -19,7 +19,7 @@ const PHOTOS_BOTTOM = [
   { src: '/sophie-7.JPG',  alt: 'Sophie working on a piece' },
   { src: '/sophie-8.JPG',  alt: 'Content day flat lay' },
   { src: '/sophie-11.JPG',  alt: 'Coffee and workspace details' },
-  { src: '/sophie-12.JPG',  alt: 'Coffee and workspace details' },
+  { src: '/sophie-10.JPG',  alt: 'Coffee and workspace details' },
 ]
 
 // ─── Collage strip ─────────────────────────────────────────────────────────────

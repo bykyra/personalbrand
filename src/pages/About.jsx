@@ -2,6 +2,49 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Timeline from "../Timeline"
 
+function ContactForm() {
+  const [status, setStatus] = useState('idle')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+    const data = new FormData(e.target)
+    const res = await fetch('https://formspree.io/f/xjgazoab', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' }
+    })
+    if (res.ok) {
+      setStatus('success')
+      e.target.reset()
+    } else {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="space-y-4">
+      {status === 'success' ? (
+        <p className="text-sm text-gray-700">Thanks — I'll be in touch soon.</p>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input type="text" name="name" placeholder="Your name" required
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400" />
+          <input type="email" name="email" placeholder="Your email" required
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400" />
+          <textarea name="message" placeholder="Your message" required rows={4}
+            className="w-full text-sm text-gray-700 border-b border-gray-200 py-2 outline-none focus:border-gray-900 transition-colors bg-transparent placeholder-gray-400 resize-none" />
+          {status === 'error' && <p className="text-xs text-red-500">Something went wrong — please try again.</p>}
+          <button type="submit" disabled={status === 'sending'}
+            className="text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1 disabled:opacity-50">
+            {status === 'sending' ? 'Sending...' : 'Send message →'}
+          </button>
+        </form>
+      )}
+    </div>
+  )
+}
+
 function About() {
   const [activeSection, setActiveSection] = useState('get-to-know-me')
   const [isScrolled, setIsScrolled] = useState(false)
@@ -145,11 +188,10 @@ function About() {
             <p className="text-sm text-gray-700 leading-relaxed text-justify">
               What started as play slowly turned into discipline. I spent hours practicing, returning to the same 
               movements until they felt natural. Today, my focus is less on learning new songs and more on technique, 
-              flow, and understanding how small adjustments change the whole.
+              flow, and understanding how small adjustments change everything.
             </p>
             <p className="text-sm text-gray-700 leading-relaxed text-justify">
-              That mindset, dedication, structure, and staying with something until it works, has shaped the way 
-              I approach my work.
+            That mindset has stayed with me.
             </p>
           </div>
         </div>
@@ -179,12 +221,10 @@ function About() {
           
           <div className="md:col-span-9 space-y-6">
             <p className="text-sm text-gray-700 leading-relaxed text-justify">
-              I'm drawn to bridging the gab between creativity and structure to them. I like thinking outside of the box, breaking 
-              down complexity, aligning people, and making sure ideas don't just sound good, but actually land.
+            I am naturally drawn to the space between creativity and structure. I like thinking beyond the obvious, breaking down complexity, aligning people, and making sure ideas do not just sound good, but actually land.
             </p>
             <p className="text-sm text-gray-700 leading-relaxed text-justify">
-              My work often thus often sits between creativity and execution. Supporting customer-facing initiatives, shaping 
-              communication, and helping projects move from concept to reality.
+            My work often sits between concept and execution. I support customer facing initiatives, shape communication, and help projects move from idea to reality.
             </p>
           </div>
         </div>
@@ -214,17 +254,14 @@ function About() {
     
     <div className="md:col-span-9 space-y-6">
       <p className="text-sm text-gray-700 leading-relaxed text-justify">
-        My move into freelancing grew naturally out of ongoing project work with Montblanc, allowing me to continue supporting the ongoing 
-        development of the Digital Paper. Over time, this setup became the most effective way for me to work: focused, hands-on, but with flexiblity to explore and enhance my skill set.
+      My move into freelancing grew naturally out of ongoing project work with Montblanc, where I continue to support the development of Digital Paper.
+      Over time, this way of working proved to be the most effective for me. Focused, hands on, and flexible enough to keep evolving.
       </p>
       <p className="text-sm text-gray-700 leading-relaxed text-justify">
-        What I value most about freelancing is the ability to support multiple teams at the same time, bringing an external (and sometimes new and fresh) perspective into ongoing tasks. I can focus entirely on bringing projects to life, 
-        coordinating across teams, and making sure customer-facing work actually lands, which is where I'm 
-        most useful.
+      What I value most is the ability to work across different teams and projects. It allows me to bring in an external perspective and apply what I learn in one context to another.
       </p>
       <p className="text-sm text-gray-700 leading-relaxed text-justify"> 
-        Supporting a campaign activation at BoraBora Studios while coordinating product communication for 
-        Montblanc keeps the work varied and lets me apply what I learn across different contexts.
+      I focus on bringing ideas to life, coordinating across teams, and making sure customer facing work is not only delivered, but truly comes together.
       </p>
     </div>
   </div>
@@ -234,29 +271,23 @@ function About() {
         <div className="border-t border-gray-200"></div>
       </div>
 
-      {/* Working Together */}
-      <section id="working-together" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
-        <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-3">
-            <p className="text-xs uppercase tracking-widest text-gray-400">
-              Working Together
-            </p>
-          </div>
-          
-          <div className="md:col-span-9 space-y-4">
-            <p className="text-sm text-gray-700 leading-relaxed text-justify">
-              I enjoy working with people who value clarity, trust, and thoughtful collaboration, and I'm always 
-              open to conversations that start with curiosity.
-            </p>
-            <a 
-              href="mailto:hermann.kyra@gmail.com" 
-              className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-600 hover:border-gray-600 transition-colors pb-1"
-            >
-              Get in touch
-            </a>
-          </div>
-        </div>
-      </section>
+     {/* Working Together */}
+<section id="working-together" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+  <div className="grid md:grid-cols-12 gap-12">
+    <div className="md:col-span-3">
+      <p className="text-xs uppercase tracking-widest text-gray-400">
+        Working Together
+      </p>
+    </div>
+    <div className="md:col-span-9 space-y-6">
+      <p className="text-sm text-gray-700 leading-relaxed text-justify">
+        I enjoy working with people who value clarity, trust, and thoughtful collaboration.
+        If that sounds like you, feel free to reach out.
+      </p>
+      <ContactForm />
+    </div>
+  </div>
+</section>
 
       <div className="max-w-5xl mx-auto px-6">
         <div className="border-t border-gray-200"></div>

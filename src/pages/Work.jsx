@@ -1,5 +1,87 @@
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+
+function WorkbookPreview() {
+  const [pages, setPages] = useState([])
+  const [current, setCurrent] = useState(0)
+  const canvasRefs = useRef([])
+
+  useEffect(() => {
+    const loadPdf = async () => {
+      const pdfjsLib = await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js')
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'
+      
+      const pdf = await pdfjsLib.getDocument('/Handwriting.pdf').promise
+      const numPages = Math.min(4, pdf.numPages)
+      const pageNums = Array.from({ length: numPages }, (_, i) => i + 1)
+      setPages(pageNums)
+
+      for (let i = 0; i < numPages; i++) {
+        const page = await pdf.getPage(i + 1)
+        const viewport = page.getViewport({ scale: 1.2 })
+        const canvas = canvasRefs.current[i]
+        if (!canvas) continue
+        const ctx = canvas.getContext('2d')
+        canvas.width = viewport.width
+        canvas.height = viewport.height
+        await page.render({ canvasContext: ctx, viewport }).promise
+      }
+    }
+    loadPdf()
+  }, [])
+
+  return (
+    <div className="mt-8">
+      <div className="relative overflow-hidden rounded-sm border border-gray-200">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {pages.map((_, i) => (
+            <div key={i} className="flex-shrink-0 w-full">
+              <canvas
+                ref={el => canvasRefs.current[i] = el}
+                className="w-full h-auto"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Arrows */}
+        <button
+          onClick={() => setCurrent(c => Math.max(0, c - 1))}
+          disabled={current === 0}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-900/50 hover:text-gray-900 transition-colors text-xl disabled:opacity-20 px-2"
+        >
+          ←
+        </button>
+        <button
+          onClick={() => setCurrent(c => Math.min(pages.length - 1, c + 1))}
+          disabled={current === pages.length - 1}
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-900/50 hover:text-gray-900 transition-colors text-xl disabled:opacity-20 px-2"
+        >
+          →
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-4">
+        {pages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-1.5 h-1.5 rounded-full transition-colors ${
+              i === current ? 'bg-gray-900' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
+      <p className="text-center text-xs text-gray-400 mt-3 tracking-wide">
+        Improve Your Handwriting · Preview
+      </p>
+    </div>
+  )
+}
 
 function Work() {
   const [activeSection, setActiveSection] = useState('project-management')
@@ -347,12 +429,7 @@ function Work() {
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use.
               </p>
-
-              <div className="bg-amber-50 border border-amber-200 rounded-sm p-4 mt-6">
-                <p className="text-amber-900 text-xs">
-                  <strong>📄 Workbook samples coming soon</strong> — Currently finalizing materials for publication
-                </p>
-              </div>
+                 < WorkbookPreview />
             </div>
           </div>
         </div>
@@ -387,23 +464,17 @@ function Work() {
 
       {/* Footer */}
       <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-gray-200">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="text-xs text-gray-500">
-            © 2026 Kyra Hermann
-          </div>
-          <div className="flex gap-8 text-xs">
-            <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">
-              LinkedIn
-            </a>
-            <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Email
-            </a>
-          </div>
-        </div>
-      </footer>
+  <div className="flex flex-col md:flex-row justify-between gap-8">
+    <div className="text-xs text-gray-500">© 2026 Kyra Hermann</div>
+    <div className="flex gap-8 text-xs">
+      <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
+      <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">LinkedIn</a>
+      <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">Email</a>
+      <a href="/impressum" className="text-gray-600 hover:text-gray-900 transition-colors">Impressum</a>
+      <a href="/datenschutz" className="text-gray-600 hover:text-gray-900 transition-colors">Datenschutz</a>
+    </div>
+  </div>
+</footer>
 
     </motion.div>
   )

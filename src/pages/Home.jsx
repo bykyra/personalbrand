@@ -159,7 +159,7 @@ function Home() {
                   Content & Communication
                 </h3>
                 <p className="text-xs text-gray-600 leading-relaxed text-justify">
-                  I create clear, engaging communication around products and campaigns, from writing articles, defining storytelling, to creating visual materials. The kind of content that helps people understand what you're offering and why it matters.
+                  I create clear, engaging communication around products and campaigns, from writing articles or captions, defining brand identity and storytelling, to creating visual materials. The kind of content that helps people understand what you're offering and why it matters.
                 </p>
               </div>
             </div>
@@ -278,41 +278,42 @@ function Home() {
         and help bring customer-facing ideas to life, let's talk.
       </p>
 
-      {/* CTA */}
-      <div className="pt-4 border-t border-gray-200 mt-8">
-        <p className="text-sm text-gray-600 mb-4">
-          Need an extra pair of hands to bring an idea to life?
-        </p>
-        <a 
-  href="mailto:hermann.kyra@gmail.com" 
-  className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1"
->
-  Get in touch →
-</a>
-      </div>
+     {/* CTA */}
+<div className="pt-4 border-t border-gray-200 mt-8 flex items-center gap-8">
+  <img 
+    src="/kyra.jpg" 
+    alt="Kyra Hermann"
+    className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+  />
+  <div>
+    <p className="text-sm text-gray-600 mb-4">
+      Need an extra pair of hands to bring an idea to life?
+    </p>
+    <a 
+      href="mailto:hermann.kyra@gmail.com" 
+      className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1"
+    >
+      Get in touch →
+    </a>
+  </div>
+</div>
     </div>
   </div>
 </section>
 
       {/* Footer */}
       <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-gray-200">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="text-xs text-gray-500">
-            © 2026 Kyra Hermann
-          </div>
-          <div className="flex gap-8 text-xs">
-            <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">
-              LinkedIn
-            </a>
-            <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Email
-            </a>
-          </div>
-        </div>
-      </footer>
+  <div className="flex flex-col md:flex-row justify-between gap-8">
+    <div className="text-xs text-gray-500">© 2026 Kyra Hermann</div>
+    <div className="flex gap-8 text-xs">
+      <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
+      <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">LinkedIn</a>
+      <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">Email</a>
+      <a href="/impressum" className="text-gray-600 hover:text-gray-900 transition-colors">Impressum</a>
+      <a href="/datenschutz" className="text-gray-600 hover:text-gray-900 transition-colors">Datenschutz</a>
+    </div>
+  </div>
+</footer>
 
     </motion.div>
   )

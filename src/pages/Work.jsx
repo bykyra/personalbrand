@@ -232,7 +232,7 @@ function Work() {
           </div>
           
           <div className="md:col-span-9">
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6 pr-4 mb-12">
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 I help teams bring projects from concept to execution. The kind of work that sits between multiple departments and needs someone to make sure everything actually happens.
               </p>
@@ -251,7 +251,7 @@ function Work() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-gray-900 pl-6 space-y-4">
+            <div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-4">
               <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Examples</h3>
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 At <span className="font-medium">Montblanc Digital Paper</span>, I coordinated cross-functional initiatives across the Digital Paper ecosystem. From feature development to internal resources and launch materials.
@@ -278,7 +278,7 @@ function Work() {
           </div>
           
           <div className="md:col-span-9">
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6 pr-4 mb-12">
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 I bring a customer perspective into product launches and feature development. That means taking what you're building and figuring out how to explain it, position it, and activate customers around it.
               </p>
@@ -294,7 +294,7 @@ function Work() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-gray-900 pl-6 space-y-4">
+            <div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-4">
               <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Example: Montblanc Digital Paper</h3>
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 I supported the development and communication of product features, digital tools, and launch materials. This meant translating technical features into customer-facing narratives and coordinating launch activities across teams.
@@ -318,7 +318,7 @@ function Work() {
           </div>
           
           <div className="md:col-span-9">
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6 pr-4 mb-12">
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 Clear communication is what makes the difference between a product people understand and one they don't. I help teams shape how ideas and products are explained across channels - whether that's written content, visual storytelling, or social media.
               </p>
@@ -338,7 +338,7 @@ function Work() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-[#8B9A8B] pl-6 space-y-6 mb-16">
+            <div className="border-l-2 border-[#8B9A8B] pl-6 pr-4 space-y-6 mb-16">
   <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">
     Example: Montblanc Digital Paper Help Center
   </h3>
@@ -374,7 +374,7 @@ function Work() {
 </div>
 
             {/* INSTAGRAM EXAMPLE */}
-<div className="border-l-2 border-gray-900 pl-6 space-y-6">
+<div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-6">
   <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Example: Pure Lettering - Social Media & Content Creation</h3>
   <p className="text-sm text-gray-700 leading-relaxed text-justify">
     I manage Instagram end-to-end by creating all content myself, including filming reels that showcase the lettering process, photographing finished work, and building a feed that reflects the brand's creative identity.
@@ -424,7 +424,7 @@ function Work() {
           </div>
           
           <div className="md:col-span-9">
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6 pr-4 mb-12">
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 Sometimes ideas need to become real, structured materials, such as guides, workbooks, templates, resources. I design and produce these using tools like InDesign to create something people can reference, use, and share.
               </p>
@@ -440,7 +440,7 @@ function Work() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-gray-900 pl-6 space-y-4">
+            <div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-4">
               <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Example: Montblanc Digital Paper Workbooks</h3>
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use.

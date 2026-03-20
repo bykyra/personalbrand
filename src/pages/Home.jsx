@@ -257,6 +257,7 @@ function Home() {
 
           <div className="md:col-span-9 space-y-16">
             <div>
+              <div className="pr-4">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-base font-medium text-gray-900">
                   Montblanc Digital Paper
@@ -272,8 +273,10 @@ function Home() {
                 Marketing & Project Management
               </p>
             </div>
+            </div>
 
             <div>
+            <div className="pr-4">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-base font-medium text-gray-900">
                   BoraBora Studios
@@ -289,8 +292,10 @@ function Home() {
                 Producer - Campaign & Activation
               </p>
             </div>
+            </div>
 
             <div>
+            <div className="pr-4">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-base font-medium text-gray-900">
                   Other Clients
@@ -305,6 +310,7 @@ function Home() {
               </p>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -321,7 +327,7 @@ function Home() {
       </p>
     </div>
 
-    <div className="md:col-span-9 space-y-8">
+    <div className="md:col-span-9 pr-4 space-y-8">
       <p className="text-sm text-gray-700 leading-loose text-justify">
         I focus on work that moves ideas from concept to reality. Coordinating across teams, 
         shaping communication, and making sure customer-facing initiatives actually land.

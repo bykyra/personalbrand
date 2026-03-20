@@ -49,20 +49,20 @@ function LanguageSwitcher() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-3" />
 
-          <div className="md:col-span-9 space-y-6">
-            <p className="text-sm text-gray-700 leading-relaxed">
+          <div className="md:col-span-9 space-y-6 pr-4">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               I am not a developer. That felt important to say upfront, because everything that 
               follows only makes sense in that context.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               Earlier this year I built a language switcher for the Montblanc Digital Paper Help 
               Center. A feature that lets users manually switch between ten different language 
               versions of the site. It works. It's live. And getting there was one of the more 
               unexpectedly satisfying things I've done in a while.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               The Help Center itself was something I'd built from scratch...content architecture, 
               article writing, the whole thing. At a certain point it became clear that a single 
               language wasn't enough. The product is sold across markets, and customers needed to 
@@ -70,7 +70,7 @@ function LanguageSwitcher() {
               Italian, Spanish, Portuguese, Japanese, Korean, Chinese Simplified and Traditional. 
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               The switcher came after. The idea was simple enough: a dropdown that lets users 
               choose their language and land in the right version. But actually building it required 
               going into parts of the platform I hadn't touched before. I had no real frame of 
@@ -78,7 +78,7 @@ function LanguageSwitcher() {
               find, and tried again.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               There were a lot of moments where something almost worked. Where the switcher would 
               appear but not redirect correctly, or redirect but lose the page context, or work in 
               one language but silently fail in three others. Each of those almost-moments was its 
@@ -86,7 +86,7 @@ function LanguageSwitcher() {
               instead of just reacting to them.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               Then one afternoon, it worked. All ten languages, switching cleanly, landing in the 
               right place. I clicked through it probably fifteen times just to be sure. Then came 
               the QA days. Methodically checking every language, every breakpoint, every edge case,
@@ -94,14 +94,14 @@ function LanguageSwitcher() {
               something clicking into place, but the quieter feeling of knowing something is solid.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxe text-justify">
               I think what I took from it isn't really about code. It's about what happens when 
               you commit to figuring something out even when you're not sure you're qualified to. 
               There's a version of this scenario where I would've simply handed it off to someone technical. Instead 
               I now have an understand of the implementation from end to end.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               My takeaway? I'll keep trying new things I have no business trying. It's been working out fine so far.
             </p>
           </div>

@@ -179,7 +179,7 @@ function About() {
             </p>
           </div>
           
-          <div className="md:col-span-9 space-y-6">
+          <div className="md:col-span-9 pr-4 space-y-6">
             <p className="text-sm text-gray-700 leading-relaxed text-justify">
               I was three years old when I first sat down at my grandma's piano. She guided my fingers across 
               the keys, and from that moment on, music became a constant in my life. Over the years, I taught 
@@ -219,7 +219,7 @@ function About() {
             </p>
           </div>
           
-          <div className="md:col-span-9 space-y-6">
+          <div className="md:col-span-9 pr-4 space-y-6">
             <p className="text-sm text-gray-700 leading-relaxed text-justify">
             I am naturally drawn to the space between creativity and structure. I like thinking beyond the obvious, breaking down complexity, aligning people, and making sure ideas do not just sound good, but actually land.
             </p>
@@ -252,7 +252,7 @@ function About() {
       </p>
     </div>
     
-    <div className="md:col-span-9 space-y-6">
+    <div className="md:col-span-9 pr-4 space-y-6">
       <p className="text-sm text-gray-700 leading-relaxed text-justify">
       My move into freelancing grew naturally out of ongoing project work with Montblanc, where I continue to support the development of Digital Paper.
       Over time, this way of working proved to be the most effective for me. Focused, hands on, and flexible enough to keep evolving.
@@ -279,7 +279,7 @@ function About() {
         Working Together
       </p>
     </div>
-    <div className="md:col-span-9 space-y-6">
+    <div className="md:col-span-9 pr-4 space-y-6">
       <p className="text-sm text-gray-700 leading-relaxed text-justify">
         I enjoy working with people who value clarity, trust, and thoughtful collaboration.
         If that sounds like you, feel free to reach out.

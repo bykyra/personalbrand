@@ -41,23 +41,6 @@ function Notes() {
       className="min-h-screen bg-white"
     >
 
-      {/* Sticky Bar (no sub-nav needed for Notes, but keeps visual consistency) */}
-      <div className={`hidden md:block sticky bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40 transition-all duration-300 ${
-        isScrolled ? 'shadow-sm' : ''
-      }`} style={{ top: '97px' }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className={`flex items-center transition-all duration-300 ${
-            isScrolled ? 'py-2' : 'py-4'
-          }`}>
-            <span className={`text-gray-400 transition-all duration-300 ${
-              isScrolled ? 'text-xs' : 'text-sm'
-            }`}>
-              Notes
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Intro */}
       <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-12 gap-12">

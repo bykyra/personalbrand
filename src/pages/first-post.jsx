@@ -141,20 +141,20 @@ function FirstPost() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-3" />
 
-          <div className="md:col-span-9 space-y-6">
-            <p className="text-sm text-gray-700 leading-relaxed">
+          <div className="md:col-span-9 pr-4 space-y-6">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               Some work days are just good from start to finish. A recent content shoot with 
               Sophie — the calligrapher behind Pure Lettering — was one of those days.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               We met at her workshop in Berlin, the kind of space that makes you want to slow 
               down the moment you walk in. Inks, nibs, paper stacked just so, afternoon light 
               coming in at the right angle. Sophie makes great coffee, which helps, and the 
               whole atmosphere made it easy to settle in and work.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               The idea for the day was to build up a solid bank of content for her Instagram — 
               process videos, detail shots, reels showing the work in motion. But Sophie had 
               also engraved a collection of our personal products ahead of the shoot, which 
@@ -162,7 +162,7 @@ function FirstPost() {
               handwriting made for some of the most striking images of the day.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               What I enjoy most about working with Sophie is how naturally the day flows. 
               She's completely at ease in front of the camera because she's just doing what 
               she does — there's no performance to it. She moves through her work with focus 
@@ -170,7 +170,7 @@ function FirstPost() {
               to stay out of the way and catch the right moments.
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               It's a reminder of why I love this kind of work. Not just the content itself, 
               but spending a few hours inside someone's creative process — watching how they 
               think, how they move, what they care about. That's the part that doesn't show 

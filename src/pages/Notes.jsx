@@ -12,13 +12,13 @@ function Notes() {
         slug: 'language-switcher',
         title: 'Building Something I Had No Business Building',
         date: '2026-02-28',
-        excerpt: 'How I programmed a 10-language switcher for the Montblanc Help Center with almost no prior coding experience — and what it felt like when it finally worked.'
+        excerpt: 'How I programmed a 10-language switcher for the Montblanc Help Center with almost no prior coding experience and what it felt like when it finally worked.'
       },
       {
         slug: 'first-post',
         title: 'A Content Day with Pure Lettering',
         date: '2026-02-17',
-        excerpt: 'A creative day in Berlin process videos, engraved products, great coffee, and a few hours inside someone\'s creative world.'
+        excerpt: 'A creative day in Berlin featuring 100h of video content, endless engraved products, great coffee, and a few hours inside someone\'s creative world.'
       }
     ]
     setPosts(postList)

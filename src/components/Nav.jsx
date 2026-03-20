@@ -1,9 +1,13 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 function Nav() {
   const location = useLocation()
   const { scrollY } = useScroll()
+
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
   
   // Text visible at top, logo visible after scroll
   const textOpacity = useTransform(scrollY, [250, 350], [1, 0])
@@ -43,6 +47,7 @@ function Nav() {
             <Link
               key={link.path}
               to={link.path}
+              onClick={handleNavClick}
               className={`text-xs uppercase tracking-widest transition-colors duration-200 ${
                 location.pathname === link.path
                   ? 'text-gray-900 border-b border-gray-900 pb-0.5'

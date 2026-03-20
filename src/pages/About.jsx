@@ -1,173 +1,301 @@
 import { motion } from 'framer-motion'
-import Timeline from "../Timeline";
+import { useState, useEffect } from 'react'
+import Timeline from "../Timeline"
 
 function About() {
+  const [activeSection, setActiveSection] = useState('get-to-know-me')
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100)
+      
+      const sections = ['get-to-know-me', 'how-this-shows-up', 'timeline', 'becoming-freelancer', 'working-together']
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 120
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.4 }}
-    className="min-h-screen bg-white"
-  >
-    <div className="min-h-screen bg-white">
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-white"
+    >
 
-{/* Hero Image */}
-<section className="w-full pt-12 pb-16">
-  <img 
-    src="/headerabout.png" 
-    alt="Kyra Hermann" 
-    className="w-full h-[60vh] object-cover"
-  />
-</section>
-
-      {/* Creativity with Structure */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
-          Creativity with Structure
-        </h2>
-        <div className="max-w-2xl space-y-6">
-          <p className="text-gray-700 text-lm leading-loose">
-            I've always been a creative person — drawn to ideas, stories, and the way things can be shaped. 
-            Over time, I realised that what excites me most isn't creativity on its own, but creativity with structure.
-          </p>
-          <p className="text-gray-700 text-lm leading-loose">
-            I enjoy bringing order to ideas, finding clarity in complexity, and turning something abstract into 
-            something tangible, understandable, and usable. That balance between thinking and doing is what 
-            continues to drive my work.
-          </p>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      {/* Sticky Navigation Bar - Hidden on mobile */}
+      <div className={`hidden md:block sticky bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40 transition-all duration-300 ${
+        isScrolled ? 'shadow-sm' : ''
+      }`} style={{ top: '97px' }}>
+        <nav className="max-w-5xl mx-auto px-6">
+          <div className={`flex gap-10 overflow-x-auto transition-all duration-300 ${
+            isScrolled ? 'py-2' : 'py-4'
+          }`}>
+            <button
+              onClick={() => scrollToSection('get-to-know-me')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'get-to-know-me'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              About Me
+            </button>
+            
+            <button
+              onClick={() => scrollToSection('how-this-shows-up')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'how-this-shows-up'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              My Work
+            </button>
+            
+            <button
+              onClick={() => scrollToSection('timeline')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'timeline'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              Background
+            </button>
+            
+            <button
+              onClick={() => scrollToSection('becoming-freelancer')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'becoming-freelancer'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              My Journey
+            </button>
+            
+            <button
+              onClick={() => scrollToSection('working-together')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'working-together'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              Working Together
+            </button>
+          </div>
+        </nav>
       </div>
 
-      {/* How This Shapes My Work */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
-          How This Shapes the Way I Work
-        </h2>
-        <div className="max-w-2xl space-y-6">
-          <p className="text-gray-700 text-lm leading-loose">
-            This perspective naturally shapes how I approach projects. I'm most at ease in environments where 
-            ideas need to be aligned, communicated, and carried through — where structure supports creativity 
-            rather than limiting it.
-          </p>
-          <p className="text-gray-700 text-lm leading-loose">
-            I like taking responsibility, coordinating across teams, and making sure things don't just start well, 
-            but actually land. I care about how work is experienced on the other side — by customers, users, or 
-            teams — and about making complex topics feel clear and approachable.
-          </p>
+      {/* Get to Know Me - Piano Story */}
+      <section id="get-to-know-me" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-3">
+            <p className="text-xs uppercase tracking-widest text-gray-400">
+              Get to Know Me
+            </p>
+          </div>
+          
+          <div className="md:col-span-9 space-y-6">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              I was three years old when I first sat down at my grandma's piano. She guided my fingers across 
+              the keys, and from that moment on, music became a constant in my life. Over the years, I taught 
+              myself how to play — without lessons, just through repetition, curiosity, and a lot of patience.
+            </p>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              What started as play slowly turned into discipline. I spent hours practicing, returning to the same 
+              movements until they felt natural. Today, my focus is less on learning new songs and more on technique, 
+              flow, and understanding how small adjustments change the whole.
+            </p>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              That mindset — dedication, structure, and staying with something until it works — has shaped the way 
+              I approach my work.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      {/* Piano Image */}
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <img 
+          src="/piano.png" 
+          alt="Piano" 
+          className="w-full h-[50vh] object-cover rounded-sm"
+        />
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
+      </div>
+
+      {/* How This Shows Up in My Work */}
+      <section id="how-this-shows-up" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-3">
+            <p className="text-xs uppercase tracking-widest text-gray-400">
+              How This Shows Up in My Work
+            </p>
+          </div>
+          
+          <div className="md:col-span-9 space-y-6">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              I'm drawn to creative ideas, but I'm most motivated by bringing structure to them. I like breaking 
+              down complexity, aligning people, and making sure ideas don't just sound good, but actually land.
+            </p>
+            <p className="text-sm text-gray-700 leading-relaxed">
+              My work often sits between creativity and execution — supporting customer-facing initiatives, shaping 
+              communication, and helping projects move from concept to reality.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
       </div>
 
       {/* Timeline */}
-      <Timeline />
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      <div id="timeline" className="scroll-mt-24">
+        <Timeline />
       </div>
 
-      {/* Becoming a Freelancer */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
-          Becoming a Freelancer
-        </h2>
-        <div className="max-w-2xl">
-          <p className="text-gray-700 text-lm leading-loose">
-            My move into freelancing wasn't something I planned in advance. It grew out of ongoing project work, 
-            where I was asked to continue supporting initiatives independently so they could move forward without 
-            interruption. Over time, this way of working became the most natural and effective setup — allowing me 
-            to stay close to the work, take ownership, and support teams in a focused and hands-on way.
-          </p>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
       </div>
 
-   {/* Outside of Work - with Piano Image */}
-<section className="max-w-4xl mx-auto px-6 py-24">
-  <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
-    Outside of Work
-  </h2>
-  
-  <div className="grid md:grid-cols-2 gap-12 items-start">
-    {/* Piano Image */}
-    <div className="h-full">
-      <img 
-        src="/piano.jpg" 
-        alt="Piano" 
-        className="w-full h-full object-cover rounded-sm min-h-[400px]"
-      />
+{/* Becoming a Freelancer */}
+<section id="becoming-freelancer" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+  <div className="grid md:grid-cols-12 gap-12">
+    <div className="md:col-span-3">
+      <p className="text-xs uppercase tracking-widest text-gray-400">
+        Becoming a Freelancer
+      </p>
     </div>
-
-    {/* Text */}
-    <div className="space-y-6">
-      <p className="text-gray-700 text-lm leading-loose">
-        Outside of work, I'm drawn to things that require focus and repetition. I taught myself how to play 
-        the piano and can easily spend hours practicing, moving across different octaves until patterns start 
-        to feel natural.
+    
+    <div className="md:col-span-9 space-y-6">
+      <p className="text-sm text-gray-700 leading-relaxed">
+        My move into freelancing grew naturally out of ongoing project work, where I was asked to continue 
+        supporting initiatives independently so they could move forward without interruption. Over time, this 
+        setup became the most effective way for me to work: focused, hands-on, and close to the execution.
       </p>
-      <p className="text-gray-700 text-lm leading-loose">
-        Music and sport are spaces where I recharge — but they've also taught me a lot about patience, 
-        consistency, and showing up even when progress is quiet.
+      <p className="text-sm text-gray-700 leading-relaxed">
+        What I value most about freelancing is the ability to work deeply on specific initiatives without 
+        the overhead of traditional employment structures. I can focus entirely on bringing projects to life, 
+        coordinating across teams, and making sure customer-facing work actually lands — which is where I'm 
+        most useful.
       </p>
-      <p className="text-gray-700 text-lm leading-loose">
-        I'm generally curious and open to trying new formats and ideas, whether that's learning something new, 
-        experimenting creatively, or exploring conversations through side projects.
+      <p className="text-sm text-gray-700 leading-relaxed">
+        This approach also allows me to work with different types of teams and projects simultaneously. 
+        Supporting a campaign activation at BoraBora Studios while coordinating product communication for 
+        Montblanc keeps the work varied and lets me apply what I learn across different contexts.
       </p>
     </div>
   </div>
 </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
       </div>
 
       {/* Working Together */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">
-          Working Together
-        </h2>
-        <div className="max-w-2xl space-y-6">
-          <p className="text-gray-700 text-lm leading-loose">
-            I enjoy working with people who value clarity, trust, and thoughtful collaboration — and I'm always 
-            open to conversations that start with curiosity.
-          </p>
-          <a 
-            href="mailto:your@email.com" 
-            className="inline-block text-gray-900 hover:text-sage-600 transition-colors border-b border-gray-900 hover:border-sage-600 pb-1"
-          >
-            Get in touch
-          </a>
+      <section id="working-together" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-3">
+            <p className="text-xs uppercase tracking-widest text-gray-400">
+              Working Together
+            </p>
+          </div>
+          
+          <div className="md:col-span-9 space-y-4">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              I enjoy working with people who value clarity, trust, and thoughtful collaboration — and I'm always 
+              open to conversations that start with curiosity.
+            </p>
+            <a 
+              href="mailto:hermann.kyra@gmail.com" 
+              className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-600 hover:border-gray-600 transition-colors pb-1"
+            >
+              Get in touch
+            </a>
+          </div>
         </div>
       </section>
 
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
+      </div>
+
+      {/* Image */}
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <img 
+          src="/headerabout.png" 
+          alt="Piano" 
+          className="w-full h-[50vh] object-cover rounded-sm"
+        />
+      </section>
+
       {/* Footer */}
-      <footer className="max-w-4xl mx-auto px-6 py-12 border-t border-gray-200">
-        <div className="flex justify-between items-center text-sm text-gray-500">
-          <p>© 2026 Kyra Hermann</p>
-          <div className="flex gap-6">
-            <a href="https://github.com/bykyra" className="hover:text-sage-600 transition-colors">GitHub</a>
-            <a href="#" className="hover:text-sage-600 transition-colors">LinkedIn</a>
+      <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="text-xs text-gray-500">
+            © 2026 Kyra Hermann
+          </div>
+          <div className="flex gap-8 text-xs">
+            <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">
+              LinkedIn
+            </a>
+            <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Email
+            </a>
           </div>
         </div>
       </footer>
 
-    </div>
-    </motion.div>)
+    </motion.div>
+  )
 }
 
 export default About

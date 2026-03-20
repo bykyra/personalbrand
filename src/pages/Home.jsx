@@ -1,243 +1,321 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 function Home() {
+  const [activeSection, setActiveSection] = useState('what-i-do')
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100)
+      
+      const sections = ['what-i-do', 'selected-work', 'approach']
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 200 && rect.bottom >= 200) {
+            setActiveSection(sectionId)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const offset = 120
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - offset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.4 }}
-    className="min-h-screen bg-white"
-  >
-    <div className="min-h-screen bg-white">
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-white"
+    >
 
-{/* New Text-Based Hero - Refined */}
-<section className="max-w-4xl mx-auto px-6 pt-16 pb-20">
-  <div className="text-center">
-    {/* Logo with everything integrated */}
-    <div className="mb-12">
-      <img 
-        src="/homelogo.jpeg" 
-        alt="Kyra - Freelancer Marketing & Project Management" 
-        className="h-24 md:h-28 mx-auto"
-      />
-    </div>
-    
-    {/* Tagline */}
-    <div className="max-w-2xl mx-auto">
-      <p className="text-sm md:text-xm uppercase text-gray-700 leading-relaxed">
-        I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
-        initiatives to product communication and rollout.
-      </p>
-    </div>
-  </div>
-</section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
-      </div>
-
-{/* How I Work - Centered */}
-<section
-  className="max-w-4xl mx-auto px-6 py-16"
->
-  <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-6 font-medium">How I Work</h2>
-  
-  <div className="flex flex-col md:flex-row gap-8 items-center">
-    {/* Photo */}
-    <div className="md:flex-shrink-0">
-      <img 
-        src="/kyra.jpg" 
-        alt="Kyra Hermann" 
-        className="w-28 h-28 md:w-32 md:h-32 object-cover rounded-full"
-      />
-    </div>
-    
-    {/* Text */}
-    <div className="flex-1">
-      <p className="text-gray-700 text-lm leading-loose">
-        I focus on work that moves ideas from concept to reality. Coordinating across teams, 
-        shaping communication, and making sure customer-facing initiatives actually land.
-      </p>
-    </div>
-  </div>
-</section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
-      </div>
-
-      {/* What I Offer */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">What I Offer</h2>
-        <div className="grid md:grid-cols-2 gap-6 group">
-          
-          <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
-            <h3 className="text-lm font-medium text-gray-900 mb-3">
-              Campaign & Activation Coordination
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              End-to-end support for customer-facing campaigns, from planning through execution 
-              and performance tracking.
-            </p>
-          </div>
-
-          <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
-            <h3 className="text-lm font-medium text-gray-900 mb-3">
-              Go-to-Market Support
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Strategic coordination for product and feature launches, ensuring alignment 
-              across teams and channels.
-            </p>
-          </div>
-
-          <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
-            <h3 className="text-lm font-medium text-gray-900 mb-3">
-              Cross-Functional Project Management
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Bringing structure to complex initiatives, managing timelines, stakeholders, 
-              and deliverables across functions.
-            </p>
-          </div>
-
-          <div className="p-6 border border-gray-100 rounded-sm transition-all duration-300 group-hover:opacity-40 hover:!opacity-100 cursor-default">
-            <h3 className="text-lm font-medium text-gray-900 mb-3">
-              Product Communication
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Shaping how products and initiatives are positioned and communicated across 
-              digital and retail touchpoints.
-            </p>
-          </div>
-
+      {/* Hero */}
+      <section className="max-w-5xl mx-auto px-6 pt-20 pb-24 border-b border-gray-200">
+        <div className="flex justify-center mb-16">
+          <img 
+            src="/homelogo.gif" 
+            alt="Kyra Hermann" 
+            className="h-20 md:h-24"
+          />
+        </div>
+        
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-sm text-gray-700 leading-relaxed">
+            I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
+            initiatives to product communication and rollout.
+          </p>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      {/* Sticky Navigation Bar - Hidden on mobile */}
+      <div className={`hidden md:block sticky bg-white/95 backdrop-blur-sm border-b border-gray-200 z-40 transition-all duration-300 ${
+        isScrolled ? 'shadow-sm' : ''
+      }`} style={{ top: '97px' }}>
+        <nav className="max-w-5xl mx-auto px-6 justify-between items-center">
+          <div className={`flex gap-10 overflow-x-auto transition-all duration-300 ${
+            isScrolled ? 'py-2' : 'py-4'
+          }`}>
+            <button
+              onClick={() => scrollToSection('what-i-do')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'what-i-do'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              What I Do
+            </button>
+            
+            <button
+              onClick={() => scrollToSection('selected-work')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'selected-work'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              Selected Work
+            </button>
+            
+            <button
+              onClick={() => scrollToSection('approach')}
+              className={`whitespace-nowrap transition-all duration-300 ${
+                isScrolled ? 'text-xs' : 'text-sm'
+              } ${
+                activeSection === 'approach'
+                  ? 'text-gray-900 border-b-2 border-gray-900 font-medium'
+                  : 'text-gray-400 hover:text-gray-600'
+              } pb-1`}
+            >
+              Approach
+            </button>
+          </div>
+        </nav>
+      </div>
+
+   {/* What I Do */}
+   <section id="what-i-do" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-3">
+            <p className="text-xs uppercase tracking-widest text-gray-400">
+              What I Do
+            </p>
+          </div>
+
+          <div className="md:col-span-9 space-y-8">
+            <div className="flex gap-4 items-start group transition-all duration-300 hover:translate-y-[-2px] p-4 rounded-sm">
+              <div className="w-1 h-16 bg-[#E8EDE7] rounded-full flex-shrink-0"></div>
+              <div>
+                <h3 className="text-sm font-medium text-gray-900 mb-2">
+                  Project & Operational Management
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  I help teams turn ideas into executed projects by keeping everyone aligned and things moving. That means coordinating stakeholders, managing timelines, and making sure nothing falls through the cracks between departments.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start group transition-all duration-300 hover:translate-y-[-2px] p-4 rounded-sm">
+              <div className="w-1 h-16 bg-[#E8EDE7] rounded-full flex-shrink-0"></div>
+              <div>
+                <h3 className="text-sm font-medium text-gray-900 mb-2">
+                  Product & Go-to-Market Support
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  I translate product ideas into launch concepts that actually make sense to customers. Whether it's a new feature or a full product launch, I help bridge the gap between what you're building and how you talk about it.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start group transition-all duration-300 hover:translate-y-[-2px] p-4 rounded-sm">
+              <div className="w-1 h-16 bg-[#E8EDE7] rounded-full flex-shrink-0"></div>
+              <div>
+                <h3 className="text-sm font-medium text-gray-900 mb-2">
+                  Content & Communication
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  I create clear, engaging communication around products and campaigns - from help center articles to launch materials. The kind of content that helps people understand what you're offering and why it matters.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4 items-start group transition-all duration-300 hover:translate-y-[-2px] p-4 rounded-sm">
+              <div className="w-1 h-16 bg-[#E8EDE7] rounded-full flex-shrink-0"></div>
+              <div>
+                <h3 className="text-sm font-medium text-gray-900 mb-2">
+                  Editorial & Design Production
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  I design structured materials like guides, workbooks, and resources that turn abstract ideas into something tangible. Think InDesign layouts, educational content, and branded materials that people can actually use.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
       </div>
 
       {/* Selected Work */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">Selected Work</h2>
-        <div className="space-y-12">
-
-          <div>
-            <h3 className="text-xm font-medium text-gray-900 mb-2">Montblanc Digital Paper</h3>
-            <p className="text-sm text-gray-500 mb-4">Marketing & Project Management | Ongoing</p>
-            <p className="text-gray-700 leading-relaxed">
-              <span className="font-medium">My role:</span> Hands-on, project-based support across 
-              marketing, product, and execution — shaping how the product is understood, communicated, 
-              and supported across customer touchpoints, from launch to post-purchase experience.
+      <section id="selected-work" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-3">
+            <p className="text-xs uppercase tracking-widest text-gray-400">
+              Selected Work
             </p>
           </div>
 
-          <div>
-            <h3 className="text-xm font-medium text-gray-900 mb-2">BoraBora Studios</h3>
-            <p className="text-sm text-gray-500 mb-4">Producer - Campaign & Activation | Ongoing</p>
-            <p className="text-gray-700 leading-relaxed">
-              <span className="font-medium">My role:</span> Supporting the delivery of customer-facing 
-              activation campaigns. Translating creative ideas into clear plans, aligning stakeholders, 
-              and ensuring smooth delivery from brief to launch across three separate projects.
-            </p>
-          </div>
+          <div className="md:col-span-9 space-y-16">
+            <div>
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-base font-medium text-gray-900">
+                  Montblanc Digital Paper
+                </h3>
+                <span className="text-xs text-gray-400">Ongoing</span>
+              </div>
+              <p className="text-xs text-gray-600 leading-relaxed mb-2">
+                Hands-on, project-based support across marketing, product, and execution — shaping how 
+                the product is understood, communicated, and supported across customer touchpoints, from 
+                launch to post-purchase experience.
+              </p>
+              <p className="text-xs text-gray-500">
+                Marketing & Project Management
+              </p>
+            </div>
 
-          <div>
-            <h3 className="text-xm font-medium text-gray-900 mb-2">Other Clients</h3>
-            <p className="text-sm text-gray-500 mb-4">Social Media Management | 2024 - Present</p>
-            <p className="text-gray-700 leading-relaxed">
-              <span className="font-medium">My role:</span> Supporting smaller brands with social 
-              media strategy, content planning, and community management.
-            </p>
-          </div>
+            <div>
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-base font-medium text-gray-900">
+                  BoraBora Studios
+                </h3>
+                <span className="text-xs text-gray-400">Ongoing</span>
+              </div>
+              <p className="text-xs text-gray-600 leading-relaxed mb-2">
+                Supporting the delivery of customer-facing activation campaigns. Translating creative 
+                ideas into clear plans, aligning stakeholders, and ensuring smooth delivery from brief 
+                to launch across three separate projects.
+              </p>
+              <p className="text-xs text-gray-500">
+                Producer - Campaign & Activation
+              </p>
+            </div>
 
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
-      </div>
-
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
-      </div>
-
-      {/* Currently Learning */}
-      <section className="max-w-4xl mx-auto px-6 py-24">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-8 font-medium">Currently Learning</h2>
-        <div className="space-y-6 max-w-2xl">
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">Coding & web development</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Building this site from scratch, learning how structure, layout, and logic come together on the web.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">Piano arpeggios</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Working on moving more fluidly across octaves and building more comfort beyond fixed patterns.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-lm font-medium text-gray-900 mb-2">Communicating complexity</h3>
-            <p className="text-gray-600 leading-relaxed">
-              Finding better ways to explain products, ideas, and systems clearly and thoughtfully.
-            </p>
+            <div>
+              <div className="flex justify-between items-start mb-3">
+                <h3 className="text-base font-medium text-gray-900">
+                  Other Clients
+                </h3>
+                <span className="text-xs text-gray-400">2024 - Present</span>
+              </div>
+              <p className="text- text-gray-600 leading-relaxed mb-2">
+                Supporting smaller brands with social media strategy, content planning, and community management.
+              </p>
+              <p className="text-xs text-gray-500">
+                Social Media Management
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="border-t border-sage-200"></div>
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="border-t border-gray-200"></div>
       </div>
 
-      {/* Contact */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-sm uppercase tracking-widest text-gray-400 mb-6 font-medium">Get in Touch</h2>
-        <div className="flex flex-col md:flex-row md:items-start gap-12">
-          <div className="md:flex-shrink-0">
-            <img 
-              src="/logo.png" 
-              alt="Kyra Hermann" 
-              className="w-32 h-32 object-cover rounded-full"
-            />
-          </div>
-          <div className="space-y-4 flex-1">
-            <p className="text-gray-700 leading-relaxed max-w-2xl">
-              If you're working on something that could use support, let's talk.
-            </p>
-            <a 
-              href="mailto:hermann.kyra@gmail.com" 
-              className="inline-block text-gray-900 hover:text-sage-600 transition-colors border-b border-gray-900 hover:border-sage-600 pb-1"
-            >
-              hermann.kyra@gmail.com
-            </a>
-          </div>
-        </div>
-      </section>
+     {/* Approach */}
+<section id="approach" className="max-w-5xl mx-auto px-6 py-20 scroll-mt-24">
+  <div className="grid md:grid-cols-12 gap-12">
+    <div className="md:col-span-3">
+      <p className="text-xs uppercase tracking-widest text-gray-400">
+        Approach
+      </p>
+    </div>
+
+    <div className="md:col-span-9 space-y-8">
+      <p className="text-sm text-gray-700 leading-loose">
+        I focus on work that moves ideas from concept to reality. Coordinating across teams, 
+        shaping communication, and making sure customer-facing initiatives actually land.
+      </p>
+      
+      <p className="text-sm text-gray-700 leading-loose">
+        My approach combines structure with flexibility. I bring clarity to complex projects, 
+        translate between different stakeholders, and stay close to execution. Whether it's 
+        coordinating a product launch, building out communication materials, or supporting 
+        campaign delivery, I work to keep things moving forward without losing sight of the 
+        bigger picture.
+      </p>
+
+      <p className="text-sm text-gray-700 leading-loose">
+        I work best with teams that value clear communication, thoughtful collaboration, and 
+        getting things done. If you're looking for someone who can jump in, bring structure, 
+        and help bring customer-facing ideas to life, let's talk.
+      </p>
+
+      {/* CTA */}
+      <div className="pt-4 border-t border-gray-200 mt-8">
+        <p className="text-sm text-gray-600 mb-4">
+          Need an extra pair of hands to bring an idea to life?
+        </p>
+        <a 
+          href="mailto:hermann.kyra@gmail.com" 
+          className="inline-flex items-center text-sm text-gray-900 border border-gray-900 px-6 py-3 rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-300"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
-      <footer className="max-w-4xl mx-auto px-6 py-12 border-t border-gray-200">
-        <div className="flex justify-between items-center text-sm text-gray-500">
-          <p>© 2026 Kyra Hermann</p>
-          <div className="flex gap-6">
-            <a href="https://github.com/bykyra" className="hover:text-sage-600 transition-colors">GitHub</a>
-            <a href="#" className="hover:text-sage-600 transition-colors">LinkedIn</a>
+      <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="text-xs text-gray-500">
+            © 2026 Kyra Hermann
+          </div>
+          <div className="flex gap-8 text-xs">
+            <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">
+              LinkedIn
+            </a>
+            <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+              Email
+            </a>
           </div>
         </div>
       </footer>
 
-    </div>
-  
-  </motion.div>)
+    </motion.div>
+  )
 }
 
 export default Home

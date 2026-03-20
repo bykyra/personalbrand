@@ -21,7 +21,7 @@ function Nav() {
       <div className="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
         
         {/* Left side - switches between text and logo */}
-        <div className="relative h-12 flex items-center min-w-[180px]">
+        <div className="relative h-12 flex items-center">
           {/* "Happy you're here" text */}
           <motion.p 
             className="text-xs uppercase tracking-widest text-gray-400 font-medium absolute left-0 whitespace-nowrap"

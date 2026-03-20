@@ -18,15 +18,15 @@ function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100">
-      <div className="max-w-4xl mx-auto px-6 py-6 flex justify-between items-center">
+      <div className="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
         
         {/* Left side - switches between text and logo */}
         <div className="relative h-12 flex items-center min-w-[180px]">
           {/* "Happy you're here" text */}
           <motion.p 
-  className="text-xs uppercase tracking-widest text-gray-400 font-medium absolute left-0 whitespace-nowrap"
-  style={{ opacity: textOpacity }}
->
+            className="text-xs uppercase tracking-widest text-gray-400 font-medium absolute left-0 whitespace-nowrap"
+            style={{ opacity: textOpacity }}
+          >
             Happy you're here
           </motion.p>
           

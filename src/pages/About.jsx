@@ -137,18 +137,18 @@ function About() {
           </div>
           
           <div className="md:col-span-9 space-y-6">
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               I was three years old when I first sat down at my grandma's piano. She guided my fingers across 
               the keys, and from that moment on, music became a constant in my life. Over the years, I taught 
-              myself how to play — without lessons, just through repetition, curiosity, and a lot of patience.
+              myself how to play. Without lessons, just through repetition, curiosity, and a lot of patience.
             </p>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
               What started as play slowly turned into discipline. I spent hours practicing, returning to the same 
               movements until they felt natural. Today, my focus is less on learning new songs and more on technique, 
               flow, and understanding how small adjustments change the whole.
             </p>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              That mindset — dedication, structure, and staying with something until it works — has shaped the way 
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
+              That mindset, dedication, structure, and staying with something until it works, has shaped the way 
               I approach my work.
             </p>
           </div>
@@ -178,12 +178,12 @@ function About() {
           </div>
           
           <div className="md:col-span-9 space-y-6">
-            <p className="text-sm text-gray-700 leading-relaxed">
-              I'm drawn to creative ideas, but I'm most motivated by bringing structure to them. I like breaking 
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
+              I'm drawn to bridging the gab between creativity and structure to them. I like thinking outside of the box, breaking 
               down complexity, aligning people, and making sure ideas don't just sound good, but actually land.
             </p>
-            <p className="text-sm text-gray-700 leading-relaxed">
-              My work often sits between creativity and execution — supporting customer-facing initiatives, shaping 
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
+              My work often thus often sits between creativity and execution. Supporting customer-facing initiatives, shaping 
               communication, and helping projects move from concept to reality.
             </p>
           </div>
@@ -213,19 +213,16 @@ function About() {
     </div>
     
     <div className="md:col-span-9 space-y-6">
-      <p className="text-sm text-gray-700 leading-relaxed">
-        My move into freelancing grew naturally out of ongoing project work, where I was asked to continue 
-        supporting initiatives independently so they could move forward without interruption. Over time, this 
-        setup became the most effective way for me to work: focused, hands-on, and close to the execution.
+      <p className="text-sm text-gray-700 leading-relaxed text-justify">
+        My move into freelancing grew naturally out of ongoing project work with Montblanc, allowing me to continue supporting the ongoing 
+        development of the Digital Paper. Over time, this setup became the most effective way for me to work: focused, hands-on, but with flexiblity to explore and enhance my skill set.
       </p>
-      <p className="text-sm text-gray-700 leading-relaxed">
-        What I value most about freelancing is the ability to work deeply on specific initiatives without 
-        the overhead of traditional employment structures. I can focus entirely on bringing projects to life, 
-        coordinating across teams, and making sure customer-facing work actually lands — which is where I'm 
+      <p className="text-sm text-gray-700 leading-relaxed text-justify">
+        What I value most about freelancing is the ability to support multiple teams at the same time, bringing an external (and sometimes new and fresh) perspective into ongoing tasks. I can focus entirely on bringing projects to life, 
+        coordinating across teams, and making sure customer-facing work actually lands, which is where I'm 
         most useful.
       </p>
-      <p className="text-sm text-gray-700 leading-relaxed">
-        This approach also allows me to work with different types of teams and projects simultaneously. 
+      <p className="text-sm text-gray-700 leading-relaxed text-justify"> 
         Supporting a campaign activation at BoraBora Studios while coordinating product communication for 
         Montblanc keeps the work varied and lets me apply what I learn across different contexts.
       </p>
@@ -247,8 +244,8 @@ function About() {
           </div>
           
           <div className="md:col-span-9 space-y-4">
-            <p className="text-sm text-gray-700 leading-relaxed">
-              I enjoy working with people who value clarity, trust, and thoughtful collaboration — and I'm always 
+            <p className="text-sm text-gray-700 leading-relaxed text-justify">
+              I enjoy working with people who value clarity, trust, and thoughtful collaboration, and I'm always 
               open to conversations that start with curiosity.
             </p>
             <a 

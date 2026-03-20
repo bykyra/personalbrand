@@ -62,7 +62,7 @@ function Home() {
         
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-sm text-gray-700 leading-relaxed">
-            I help teams bring customer-facing ideas to life — from campaigns and go-to-market 
+            I help teams bring customer-facing ideas to life, from campaigns and go-to-market 
             initiatives to product communication and rollout.
           </p>
         </div>
@@ -134,8 +134,8 @@ function Home() {
                 <h3 className="text-sm font-medium text-gray-900 mb-2">
                   Project & Operational Management
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  I help teams turn ideas into executed projects by keeping everyone aligned and things moving. That means coordinating stakeholders, managing timelines, and making sure nothing falls through the cracks between departments.
+                <p className="text-xs text-gray-600 leading-relaxed text-justify">
+                  I help teams turn ideas into executed projects by keeping everyone aligned and things moving. That means coordinating stakeholders, managing timelines, and making sure nothing falls through the cracks.
                 </p>
               </div>
             </div>
@@ -146,7 +146,7 @@ function Home() {
                 <h3 className="text-sm font-medium text-gray-900 mb-2">
                   Product & Go-to-Market Support
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed text-justify">
                   I translate product ideas into launch concepts that actually make sense to customers. Whether it's a new feature or a full product launch, I help bridge the gap between what you're building and how you talk about it.
                 </p>
               </div>
@@ -158,8 +158,8 @@ function Home() {
                 <h3 className="text-sm font-medium text-gray-900 mb-2">
                   Content & Communication
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  I create clear, engaging communication around products and campaigns - from help center articles to launch materials. The kind of content that helps people understand what you're offering and why it matters.
+                <p className="text-xs text-gray-600 leading-relaxed text-justify">
+                  I create clear, engaging communication around products and campaigns, from writing articles, defining storytelling, to creating visual materials. The kind of content that helps people understand what you're offering and why it matters.
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ function Home() {
                 <h3 className="text-sm font-medium text-gray-900 mb-2">
                   Editorial & Design Production
                 </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed text-justify">
                   I design structured materials like guides, workbooks, and resources that turn abstract ideas into something tangible. Think InDesign layouts, educational content, and branded materials that people can actually use.
                 </p>
               </div>
@@ -200,8 +200,8 @@ function Home() {
                 </h3>
                 <span className="text-xs text-gray-400">Ongoing</span>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed mb-2">
-                Hands-on, project-based support across marketing, product, and execution — shaping how 
+              <p className="text-xs text-gray-600 leading-relaxed text-justify mb-2">
+                Hands-on, project-based support across marketing, product, and execution. Shaping how 
                 the product is understood, communicated, and supported across customer touchpoints, from 
                 launch to post-purchase experience.
               </p>
@@ -217,7 +217,7 @@ function Home() {
                 </h3>
                 <span className="text-xs text-gray-400">Ongoing</span>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed mb-2">
+              <p className="text-xs text-gray-600 leading-relaxed text-justify mb-2">
                 Supporting the delivery of customer-facing activation campaigns. Translating creative 
                 ideas into clear plans, aligning stakeholders, and ensuring smooth delivery from brief 
                 to launch across three separate projects.
@@ -234,7 +234,7 @@ function Home() {
                 </h3>
                 <span className="text-xs text-gray-400">2024 - Present</span>
               </div>
-              <p className="text- text-gray-600 leading-relaxed mb-2">
+              <p className="text-xs text-gray-600 leading-relaxed text-justify mb-2">
                 Supporting smaller brands with social media strategy, content planning, and community management.
               </p>
               <p className="text-xs text-gray-500">
@@ -259,12 +259,12 @@ function Home() {
     </div>
 
     <div className="md:col-span-9 space-y-8">
-      <p className="text-sm text-gray-700 leading-loose">
+      <p className="text-sm text-gray-700 leading-loose text-justify">
         I focus on work that moves ideas from concept to reality. Coordinating across teams, 
         shaping communication, and making sure customer-facing initiatives actually land.
       </p>
       
-      <p className="text-sm text-gray-700 leading-loose">
+      <p className="text-sm text-gray-700 leading-loos text-justify">
         My approach combines structure with flexibility. I bring clarity to complex projects, 
         translate between different stakeholders, and stay close to execution. Whether it's 
         coordinating a product launch, building out communication materials, or supporting 
@@ -272,7 +272,7 @@ function Home() {
         bigger picture.
       </p>
 
-      <p className="text-sm text-gray-700 leading-loose">
+      <p className="text-sm text-gray-700 leading-loose text-justify">
         I work best with teams that value clear communication, thoughtful collaboration, and 
         getting things done. If you're looking for someone who can jump in, bring structure, 
         and help bring customer-facing ideas to life, let's talk.
@@ -284,11 +284,11 @@ function Home() {
           Need an extra pair of hands to bring an idea to life?
         </p>
         <a 
-          href="mailto:hermann.kyra@gmail.com" 
-          className="inline-flex items-center text-sm text-gray-900 border border-gray-900 px-6 py-3 rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-300"
-        >
-          Get in touch
-        </a>
+  href="mailto:hermann.kyra@gmail.com" 
+  className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-gray-500 hover:border-gray-500 transition-colors pb-1"
+>
+  Get in touch →
+</a>
       </div>
     </div>
   </div>

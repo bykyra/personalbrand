@@ -477,7 +477,7 @@ function Work() {
       <footer className="max-w-5xl mx-auto px-6 py-16 border-t border-gray-200">
   <div className="flex flex-col md:flex-row justify-between gap-8">
     <div className="text-xs text-gray-500">© 2026 Kyra Hermann</div>
-    <div className="flex gap-8 text-xs">
+    <div className="grid grid-cols-2 md:flex gap-4 md:gap-8 text-xs">
       <a href="https://github.com/bykyra" className="text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
       <a href="https://linkedin.com/in/kyrahermann" className="text-gray-600 hover:text-gray-900 transition-colors">LinkedIn</a>
       <a href="mailto:hermann.kyra@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">Email</a>

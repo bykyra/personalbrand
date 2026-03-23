@@ -7,8 +7,8 @@ function Nav() {
   const { scrollY } = useScroll()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const textOpacity = useTransform(scrollY, [250, 350], [1, 0])
-  const logoOpacity = useTransform(scrollY, [250, 350], [0, 1])
+  const textOpacity = useTransform(scrollY, [50, 150], [1, 0])
+  const logoOpacity = useTransform(scrollY, [50, 150], [0, 1])
 
   const links = [
     { path: '/', label: 'Home' },
@@ -28,20 +28,21 @@ function Nav() {
         <div className="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
 
           {/* Left side */}
-          <Link to="/" onClick={handleNavClick} className="relative h-12 flex items-center">
-            <motion.p
-              className="text-xs uppercase tracking-widest text-gray-400 font-medium absolute left-0 whitespace-nowrap"
-              style={{ opacity: textOpacity }}
-            >
-              Happy you're here
-            </motion.p>
-            <motion.img
-              src="/logo.png"
-              alt="Kyra Hermann"
-              className="h-16 w-auto absolute left-0"
-              style={{ opacity: logoOpacity }}
-            />
-          </Link>
+          <Link to="/" onClick={handleNavClick} className="relative h-12 flex items-center" style={{ minWidth: '200px' }}>
+  <motion.p
+    className="text-xs uppercase tracking-widest text-gray-400 font-medium absolute left-0 whitespace-nowrap"
+    style={{ opacity: textOpacity }}
+  >
+    Happy you're here
+  </motion.p>
+  
+  <motion.img
+    src="/logo.png"
+    alt="Kyra Hermann"
+    className="h-16 w-auto absolute left-0"
+    style={{ opacity: logoOpacity }}
+  />
+</Link>
 
           {/* Desktop links */}
           <div className="hidden md:flex gap-8">

@@ -9,6 +9,12 @@ function Notes() {
   useEffect(() => {
     const postList = [
       {
+        slug: 'building-this-site',
+        title: 'Finally! A website.',
+        date: '2026-03-23',
+        excerpt: 'How a Montblanc language switcher inspired a fully custom React site and what the process taught me about the work I do.'
+      },
+      {
         slug: 'language-switcher',
         title: 'Building Something I Had No Business Building',
         date: '2026-02-28',

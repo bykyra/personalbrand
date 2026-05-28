@@ -2,11 +2,13 @@ import { useParams } from 'react-router-dom'
 import FirstPost from './first-post'
 import LanguageSwitcher from './language-switcher'
 import BuildingThisSite from './building-this-site'
+import SteppingIn from './stepping-in'
 
 const posts = {
   'first-post': <FirstPost />,
   'language-switcher': <LanguageSwitcher />,
   'building-this-site': <BuildingThisSite />,
+  'stepping-in': <SteppingIn />,
 }
 
 function Post() {

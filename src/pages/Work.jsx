@@ -447,6 +447,13 @@ function Work() {
               </p>
                  < WorkbookPreview />
             </div>
+            <div className="border-l-2 border-gray-900 pl-6 space-y-4 mt-12">
+  <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Example: Zahnarzt Freiheit — Weekly Workshop Presentations</h3>
+  <p className="text-sm text-gray-700 leading-relaxed">
+    I design and produce weekly presentations for a live workshop series aimed at dental clinic owners. Working from handwritten content delivered Tuesday evening, I turn each session into a polished, on-brand presentation — ready for a live audience by Wednesday afternoon. This included building the full design system from scratch: dark navy backgrounds, gold accents, and a clean visual language that matches the premium positioning of the programme.
+  </p>
+  {/* Slide previews — add images here once approved */}
+</div>
           </div>
         </div>
       </section>

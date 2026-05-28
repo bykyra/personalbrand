@@ -9,6 +9,12 @@ function Notes() {
   useEffect(() => {
     const postList = [
       {
+        slug: 'design-under-pressure',
+        title: 'From Handwritten Notes to a Live Stage',
+        date: '2026-05-28',
+        excerpt: 'On building a weekly presentation workflow for a live workshop: from handwritten content on Tuesday night to polished slides by Wednesday lunchtime.'
+      },
+      {
         slug: 'stepping-in',
         title: 'Stepping In',
         date: '2026-05-28',

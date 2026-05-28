@@ -13,7 +13,7 @@ function Notes() {
         title: 'Stepping In',
         date: '2026-05-28',
         excerpt: 'On joining stretched teams, taking ownership fast, and what it really means to be a useful extra pair of hands.'
-      }
+      },
       {
         slug: 'building-this-site',
         title: 'Finally! A website.',
@@ -31,7 +31,7 @@ function Notes() {
         title: 'A Content Day with Pure Lettering',
         date: '2026-02-17',
         excerpt: 'A creative day in Berlin featuring 100h of video content, endless engraved products, great coffee, and a few hours inside someone\'s creative world.'
-      },
+      }
     ]
     setPosts(postList)
   }, [])

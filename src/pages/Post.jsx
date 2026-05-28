@@ -3,12 +3,14 @@ import FirstPost from './first-post'
 import LanguageSwitcher from './language-switcher'
 import BuildingThisSite from './building-this-site'
 import SteppingIn from './stepping-in'
+import DesignUnderPressure from './design-under-pressure'
 
 const posts = {
   'first-post': <FirstPost />,
   'language-switcher': <LanguageSwitcher />,
   'building-this-site': <BuildingThisSite />,
   'stepping-in': <SteppingIn />,
+  'design-under-pressure': <DesignUnderPressure />,
 }
 
 function Post() {

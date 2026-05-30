@@ -443,7 +443,10 @@ function Work() {
             <div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-4">
               <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Example: Montblanc Digital Paper Workbooks</h3>
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use.
+                I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use. 
+              </p>
+              <p className="text-sm text-gray-700 leading-relaxed text-justify">
+                One example is the Montblanc Improve your Handwriting Workbook, created for the Digital Paper launch in collaboration with the talented Sophie from PureLettering.de. 
               </p>
                  < WorkbookPreview />
             </div>

@@ -446,7 +446,7 @@ function Work() {
                 I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use. 
               </p>
               <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                One example is the Montblanc Improve your Handwriting Workbook, created for the Digital Paper launch in collaboration with the talented Sophie from <a href="https://purelettering.de" target="_blank" rel="noopener noreferrer" className="border-b border-gray-700 hover:text-gray-500 hover:border-gray-500 transition-colors">PureLettering.de</a>. 
+                One example is the Montblanc "Improving Handwriting" Workbook, created for the Digital Paper launch in collaboration with the talented Sophie from <a href="https://purelettering.de" target="_blank" rel="noopener noreferrer" className="border-b border-gray-700 hover:text-gray-500 hover:border-gray-500 transition-colors">PureLettering.de</a>. 
               </p>
                 <WorkbookPreview />
             </div>

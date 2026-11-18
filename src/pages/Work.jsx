@@ -442,17 +442,42 @@ function Work() {
                 <li className="text-sm text-gray-700 leading-relaxed">Translating complex information into clear visual formats</li>
               </ul>
             </div>
+            <div className="border-l-2 border-gray-900 pl-6 space-y-4">
+  <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+    Example: Montblanc Digital Paper Workbooks
+  </h3>
 
-            <div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-4">
-              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Example: Montblanc Digital Paper Workbooks</h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use. 
-              </p>
-              <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                One example is the Montblanc "Improving Handwriting" Workbook, created for the Digital Paper launch in collaboration with the talented Sophie from <a href="https://purelettering.de" target="_blank" rel="noopener noreferrer" className="border-b border-gray-700 hover:text-gray-500 hover:border-gray-500 transition-colors">PureLettering.de</a>. 
-              </p>
-                <WorkbookPreview />
-            </div>
+  <p className="text-sm text-gray-700 leading-relaxed">
+    I designed structured workbooks and resources for Montblanc Digital Paper to help users explore handwriting, productivity, and creativity with the device. This included designing layouts, writing content, and creating templates they could download and use.
+  </p>
+
+  <p className="text-sm text-gray-700 leading-relaxed">
+    One example is the Montblanc "Improving Handwriting" Workbook, created for the Digital Paper launch in collaboration with the talented Sophie from{' '}
+    <a
+      href="https://purelettering.de"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="border-b border-gray-700 hover:text-gray-500 hover:border-gray-500 transition-colors"
+    >
+      PureLettering.de
+    </a>.
+  </p>
+
+  <WorkbookPreview />
+
+  <p className="text-sm text-gray-700 leading-relaxed pt-4">
+    For the <span className="font-medium">planner</span> and <span className="font-medium">sudoku</span>, I created everything from start to finish, including concept, layout, content and production. Both were built to showcase the device's then newly introduced hyperlinking feature: I linked each document internally so users can jump directly between sections, months or puzzles with a single tap. This turned a new technical feature into something people could immediately see value in.
+  </p>
+
+  <a
+    href="https://papersupport.montblanc.com/portal/en/kb/features-functionality/resources"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block text-sm text-gray-900 border-b border-gray-900 hover:text-[#8B9A8B] hover:border-[#8B9A8B] transition-colors pb-1"
+  >
+    View all resources →
+  </a>
+</div>
           </div>
         </div>
       </section>

@@ -254,8 +254,24 @@ function Home() {
               Selected Work
             </p>
           </div>
-
           <div className="md:col-span-9 space-y-16">
+            {/* Project – Melitta */}
+<div>
+  <div className="flex justify-between items-start mb-3">
+    <h3 className="text-base font-medium text-gray-900">
+      Melitta Europe
+    </h3>
+    <span className="text-xs text-gray-400">Ongoing</span>
+  </div>
+  <p className="text-sm text-gray-600 leading-relaxed mb-2">
+    Project management support for an international product initiative: coordinating 
+    stakeholders across teams, keeping timelines and deliverables on track, and making 
+    sure decisions move smoothly from concept to launch.
+  </p>
+  <p className="text-xs text-gray-500">
+    Project Management
+  </p>
+</div>
             <div>
               <div className="pr-4">
               <div className="flex justify-between items-start mb-3">

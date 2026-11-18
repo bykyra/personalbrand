@@ -257,10 +257,10 @@ function Work() {
     At <span className="font-medium">Melitta Europe</span>, I support an international product initiative as project manager, coordinating stakeholders across teams and keeping timelines and deliverables on track from concept to launch.
   </p>
   <p className="text-sm text-gray-700 leading-relaxed">
-    At <span className="font-medium">Montblanc Digital Paper</span>, ...
+    At <span className="font-medium">Montblanc Digital Paper</span>, I coordinated cross-functional initiatives across the Digital Paper ecosystem. From feature development to internal resources and launch materials.
   </p>
   <p className="text-sm text-gray-700 leading-relaxed">
-    At <span className="font-medium">Studio Bora Bora</span>, ...
+    At <span className="font-medium">Studio Bora Bora</span>, I supported campaign and activation projects for international clients by keeping teams, timelines, and production workflows on track.
   </p>
 </div>
           </div>

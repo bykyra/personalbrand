@@ -466,7 +466,7 @@ function Work() {
   <WorkbookPreview />
 
   <p className="text-sm text-gray-700 leading-relaxed pt-4">
-    For the <span className="font-medium">planner</span> and <span className="font-medium">sudoku</span>, I created everything from start to finish, including concept, layout, content and production. Both were built to showcase the device's then newly introduced hyperlinking feature: I linked each document internally so users can jump directly between sections, months or puzzles with a single tap. This turned a new technical feature into something people could immediately see value in.
+    For the <span className="font-medium">Digital Planner</span> and <span className="font-medium">Puzzle Workbook</span>, I created everything from start to finish, including concept, layout, content and production. Both were built to showcase the device's then newly introduced hyperlinking feature: I linked each document internally so users can jump directly between sections, months or puzzles with a single tap. This turned a new technical feature into something people could immediately see value in.
   </p>
 
   <a

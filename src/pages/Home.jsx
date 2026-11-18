@@ -259,17 +259,17 @@ function Home() {
 <div>
   <div className="flex justify-between items-start mb-3">
     <h3 className="text-base font-medium text-gray-900">
-      Melitta Europe
+      Melitta Kaffee
     </h3>
     <span className="text-xs text-gray-400">Ongoing</span>
   </div>
-  <p className="text-sm text-gray-600 leading-relaxed mb-2">
+  <p className="text-xs text-gray-600 leading-relaxed text-justify mb-2">
     Project management support for an international product initiative: coordinating 
     stakeholders across teams, keeping timelines and deliverables on track, and making 
     sure decisions move smoothly from concept to launch.
   </p>
   <p className="text-xs text-gray-500">
-    Project Management
+    Project & Operational Management
   </p>
 </div>
             <div>

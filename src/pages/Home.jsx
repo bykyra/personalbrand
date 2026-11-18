@@ -260,7 +260,7 @@ function Home() {
 <div className="pr-4">
   <div className="flex justify-between items-start mb-3">
     <h3 className="text-base font-medium text-gray-900">
-      Melitta Kaffee
+      Melitta Europe
     </h3>
     <span className="text-xs text-gray-400">Ongoing</span>
   </div>

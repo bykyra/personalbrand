@@ -251,15 +251,18 @@ function Work() {
               </ul>
             </div>
 
-            <div className="border-l-2 border-gray-900 pl-6 pr-4 space-y-4">
-              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Examples</h3>
-              <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                At <span className="font-medium">Montblanc Digital Paper</span>, I coordinated cross-functional initiatives across the Digital Paper ecosystem. From feature development to internal resources and launch materials.
-              </p>
-              <p className="text-sm text-gray-700 leading-relaxed text-justify">
-                At <span className="font-medium">Studio BoraBora</span>, I supported campaign and activation projects for international clients by keeping teams, timelines, and production workflows on track.
-              </p>
-            </div>
+            <div className="border-l-2 border-gray-900 pl-6 space-y-4">
+  <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wide">Examples</h3>
+  <p className="text-sm text-gray-700 leading-relaxed">
+    At <span className="font-medium">Melitta Europe</span>, I support an international product initiative as project manager, coordinating stakeholders across teams and keeping timelines and deliverables on track from concept to launch.
+  </p>
+  <p className="text-sm text-gray-700 leading-relaxed">
+    At <span className="font-medium">Montblanc Digital Paper</span>, ...
+  </p>
+  <p className="text-sm text-gray-700 leading-relaxed">
+    At <span className="font-medium">Studio Bora Bora</span>, ...
+  </p>
+</div>
           </div>
         </div>
       </section>

@@ -256,7 +256,8 @@ function Home() {
           </div>
           <div className="md:col-span-9 space-y-16">
             {/* Project – Melitta */}
-<div>
+            <div>
+<div className="pr-4">
   <div className="flex justify-between items-start mb-3">
     <h3 className="text-base font-medium text-gray-900">
       Melitta Kaffee
@@ -271,6 +272,7 @@ function Home() {
   <p className="text-xs text-gray-500">
     Project & Operational Management
   </p>
+</div>
 </div>
             <div>
               <div className="pr-4">
